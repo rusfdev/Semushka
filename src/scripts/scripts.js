@@ -598,48 +598,54 @@ class ParallaxProductSlider {
   }
 
   init() {
-    this.$container = this.$parent.querySelector('.parallax-product-slider__container');
-    this.$wrapper = this.$parent.querySelector('.parallax-product-slider__wrapper');
-    this.$inner = this.$parent.querySelector('.parallax-product-slider__inner');
+    this.x_position = 0;
+    this.x_value = 0;
+
+    this.$slider = this.$parent.querySelector('.swiper-container');
     this.$background = this.$parent.querySelector('.parallax-product-slider__background');
 
-    this.progress = 0;
-
-
-    this.background_animation = gsap.timeline({paused:true})
-        .fromTo(this.$background, {xPercent:0}, {xPercent:-10, ease:'none'})
-    
-    this.updateParams = ()=> {
-      
-      this.scroll_width = this.$inner.getBoundingClientRect().width - this.$wrapper.getBoundingClientRect().width;
-
-      this.content_animation = gsap.timeline({paused:true})
-        .fromTo(this.$inner, {x:0}, {x:-this.scroll_width, ease:'none'})
-        .progress(this.progress || 0);      
-    }
-
-    this.updateParams();
-    window.addEventListener('resize', this.updateParams);
-
-    this.trigger = ScrollTrigger.create({
-      trigger: this.$container,
-      start: () => {
-        let value = `center-=${(Header.$element.getBoundingClientRect().height / 2) - 10} center`
-        return value;
-      },
-      end: "center+=1000 center",
-      pin: true,
-      onUpdate: self => {
-        this.progress = self.progress;
-        this.content_animation.progress(this.progress);
-        this.background_animation.progress(this.progress);
-      },
-      onRefresh: self => {
-        this.progress = self.progress;
-        this.content_animation.progress(this.progress);
-        this.background_animation.progress(this.progress);
+    this.slider = new Swiper(this.$slider, {
+      touchStartPreventDefault: false,
+      freeMode: true,
+      slidesPerView: 'auto',
+      enabled: false,
+      speed: 500,
+      lazy: {
+        loadOnTransitionStart: true,
+        loadPrevNext: true
       }
     });
+
+    //parallax
+    let x = 100 - (this.$parent.getBoundingClientRect().width/this.$background.getBoundingClientRect().width * 100);
+    console.log(x)
+
+    this.mousemove = (event) => {
+      let w = this.$slider.getBoundingClientRect().width,
+          x = this.$slider.getBoundingClientRect().left,
+          val1 = (event.clientX - x) / w;
+      
+      this.x_value = Math.min(1, Math.max(0, val1));
+    }
+
+    this.checkPosition = () => {
+      this.x_position += (this.x_value - this.x_position) * 0.1;
+      
+      
+      //parallax
+      let x = 100 - (this.$parent.getBoundingClientRect().width/this.$background.getBoundingClientRect().width * 100);
+      this.$background.style.transform = `translate3d(${-x * this.x_position}%, 0, 0)`;
+
+
+      //scroll
+      this.slider.setProgress(this.x_position, 0)
+
+      
+      requestAnimationFrame(this.checkPosition);
+    }
+
+    document.addEventListener('mousemove', this.mousemove);
+    this.checkPosition();
     
   }
 
@@ -647,4 +653,67 @@ class ParallaxProductSlider {
     
   }
 
+}
+
+class Partners {
+  constructor($parent) {
+    this.$parent = $parent;
+  }
+
+  init() {
+    this.checkVersion = () => {
+      if(window.innerWidth>=brakepoints.lg && !mobile() && (!this.initialized || this.flag)) {
+        this.initDesktop();
+        this.flag = false;
+      } else if(window.innerWidth<brakepoints.lg && (!this.initialized || !this.flag)) {
+        if(this.initialized) this.destroyDesktop();
+        this.flag = true;
+      } 
+    }
+    this.checkVersion();
+    window.addEventListener('resize', this.checkVersion);
+    this.initialized = true;
+  }
+
+  initDesktop() {
+    this.$items = this.$parent.querySelectorAll('.partner-item');
+    this.$outer = this.$parent.querySelector('.section-partners__container');
+
+    this.$outer.classList.add('section-partners__container_desktop');
+    this.$items.forEach($this => {
+      $this.classList.add('partner-item_desktop');
+    })
+
+    this.getWidth = () => {
+      this.outerWidth = this.$outer.getBoundingClientRect().width;
+      this.innerWidth = 0;
+      this.$items.forEach($this => {
+        let m = +getComputedStyle($this).marginLeft.replace(/[a-zа-яё]/gi, ''),
+            w = $this.getBoundingClientRect().width;
+        this.innerWidth+=m+w;
+      })
+      this.slideWidth = this.innerWidth - this.outerWidth;
+    }
+
+    this.mousemove = (event) => {
+      let val = event.clientX/window.innerWidth;
+
+      gsap.to(this.$outer, {x:-val*this.slideWidth, ease:'power2.out', duration:1})
+    }
+
+    this.getWidth();
+
+    document.addEventListener('mousemove', this.mousemove)
+    window.addEventListener('resize', this.getWidth)  
+  }
+
+  destroyDesktop() {
+    document.removeEventListener('mousemove', this.mousemove);
+    window.removeEventListener('resize', this.getWidth);
+    gsap.set(this.$outer, {clearProps: "all"});
+    this.$outer.classList.remove('section-partners__container_desktop');
+    this.$items.forEach($this => {
+      $this.classList.remove('partner-item_desktop');
+    })
+  }
 }

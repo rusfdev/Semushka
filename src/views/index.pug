@@ -76,47 +76,56 @@ block content
               +product-card(2)
         .swiper-pagination    
 
-  section.section.parallax-product-slider
-    .parallax-product-slider__container
-      .parallax-product-slider__background 
-        .image.image_cover
-          img(data-src="./img/Frame 1.png", alt="image").lazyload
-      .container 
-        .section__head.section__head_with-button
-          h2.section__title.section__title_with-button Наша продукция
-          a(href="./katalog.html").button.button_style-2.button_arrow
-            span Смотреть все
-            svg.icon
-              use(xlink:href='./img/icons/sprite.svg#right-arrow')
-        .parallax-product-slider__wrapper
+  section.section.parallax-product-slider.swiper
+    .parallax-product-slider__background.image.image_cover
+      img(data-src="./img/Frame 1.png", alt="image").lazyload
 
-          .parallax-product-slider__inner
-            img(src="./img/line.svg", alt="line").parallax-product-slider__line
-            .parallax-product-slider__elements
-              a(href="#").product-category-block.parallax-product-slider__block
-                .image.image_contain
-                  img(data-src="./img/categories/1.png", alt="image").lazyload
-                h6.product-category-block__title Орехи
-              a(href="#").product-category-block.parallax-product-slider__block
-                .image.image_contain
-                  img(data-src="./img/categories/2.png", alt="image").lazyload
-                h6.product-category-block__title Сухофрукты
-              a(href="#").product-category-block.parallax-product-slider__block
-                .image.image_contain
-                  img(data-src="./img/categories/3.png", alt="image").lazyload
-                h6.product-category-block__title Смеси
-              a(href="#").product-category-block.parallax-product-slider__block
-                .image.image_contain
-                  img(data-src="./img/categories/4.png", alt="image").lazyload
-                h6.product-category-block__title Семечки
-              a(href="#").product-category-block.parallax-product-slider__block
-                .image.image_contain
-                  img(data-src="./img/categories/5.png", alt="image").lazyload
-                h6.product-category-block__title Сладости
-              a(href="#").product-category-block.parallax-product-slider__block
-                .image.image_contain
-                  img(data-src="./img/categories/6.png", alt="image").lazyload
-                h6.product-category-block__title Наборы
+    .container 
+      .section__head.section__head_with-button
+        h2.section__title.section__title_with-button Наша продукция
+        a(href="./katalog.html").button.button_style-2.button_arrow
+          span Смотреть все
+          svg.icon
+            use(xlink:href='./img/icons/sprite.svg#right-arrow')
+
+      .swiper-container
+        .swiper-wrapper
+          img(src="./img/line.svg", alt="line").parallax-product-slider__line
+          .swiper-slide
+            a(href="#").product-category-block
+              .image.image_contain
+                img(data-src="./img/categories/1.png", alt="image").lazyload
+              h6.product-category-block__title Орехи
+          .swiper-slide
+            a(href="#").product-category-block
+              .image.image_contain
+                img(data-src="./img/categories/2.png", alt="image").lazyload
+              h6.product-category-block__title Сухофрукты
+          .swiper-slide
+            a(href="#").product-category-block
+              .image.image_contain
+                img(data-src="./img/categories/3.png", alt="image").lazyload
+              h6.product-category-block__title Смеси
+          .swiper-slide
+            a(href="#").product-category-block
+              .image.image_contain
+                img(data-src="./img/categories/4.png", alt="image").lazyload
+              h6.product-category-block__title Семечки
+          .swiper-slide
+            a(href="#").product-category-block
+              .image.image_contain
+                img(data-src="./img/categories/5.png", alt="image").lazyload
+              h6.product-category-block__title Сладости
+          .swiper-slide
+            a(href="#").product-category-block
+              .image.image_contain
+                img(data-src="./img/categories/6.png", alt="image").lazyload
+              h6.product-category-block__title Наборы
+  
+  
+  section.section
+    .container
+      include blocks/banner1
 
   section.section.about-section
     .container 
