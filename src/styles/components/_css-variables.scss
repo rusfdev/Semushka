@@ -23,6 +23,7 @@
     --content-width: 100%;
   }
   
+  --content-gutter: ((100vw - var(--content-width) + var(--container-gutter-x) * 2) / 2);
 
   --block-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.05);
 }

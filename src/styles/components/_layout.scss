@@ -19,16 +19,21 @@
 .section {
   margin-bottom: 150px;
   flex-shrink: 0;
+  position: relative;
   &__head {
     margin-bottom: 45px;
   }
-  &__banner {
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--grid-gutter-x);
-    .banner {
-      grid-column: 2/12;
+  &_border {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: calc(var(--content-width) - var(--container-gutter-x) * 2 - 100px);
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      background-color: var(--color-borders);
+      bottom: -75px;
     }
   }
   &:first-child {
@@ -48,13 +53,6 @@
     &__title {
       &_with-button {
         margin: 0;
-      }
-    }
-  }
-  @include media-breakpoint-down(lg) {
-    &__banner {
-      .banner {
-        grid-column: 1/13;
       }
     }
   }

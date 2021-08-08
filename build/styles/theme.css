@@ -13,6 +13,8 @@
   --color-label-3: #FF6914;
   --color-label-4: #20B7D8;
   --color-socials: rgba(43, 41, 41, 0.2);
-  --color-modal-overlay: rgba(43, 41, 41, 0.6); }
+  --color-modal-overlay: rgba(43, 41, 41, 0.6);
+  --color-scrollbar-track: #F1F1F1;
+  --color-scrollbar-thumb: #C1C1C1; }
 
 /*# sourceMappingURL=maps/theme.css.map */

@@ -1,23 +1,23 @@
 .product-head 
   .product-head__head 
-    h1.h4.product-head__title Арахис жаренный дробленный 
+    h1.h4.product-head__title Грецкие сушенные орехи
     
   .swiper.product-preview-slider.product-head__slider 
     .product-preview-slider__small-images 
       .product-preview-slider__small-image.image.image_contain 
-        img(data-src="./img/5_Box_Semushka_ok 2.png", alt="image").lazyload
+        img(data-src="./img/product-1.png", alt="image").lazyload
       .product-preview-slider__small-image.image.image_contain 
-        img(data-src="./img/5_Box_Semushka_ok 1.png", alt="image").lazyload
+        img(data-src="./img/product-2.png", alt="image").lazyload
 
     .product-preview-slider__slider
       .swiper-container 
         .swiper-wrapper 
           .swiper-slide 
             .image.image_contain  
-              img(data-src="./img/5_Box_Semushka_ok 2.png", alt="image").swiper-lazy
+              img(data-src="./img/product-1.png", alt="image").swiper-lazy
           .swiper-slide 
             .image.image_contain  
-              img(data-src="./img/5_Box_Semushka_ok 1.png", alt="image").swiper-lazy
+              img(data-src="./img/product-2.png", alt="image").swiper-lazy
 
   .product-head__content
     .product-head__content-section
@@ -58,11 +58,9 @@
             span Упаковка
           td 
             span Полиэтиленовый пакет
+    
     .product-head__content-section
-      if head_type == 1
-        span.product-head__content-section-title Вес товара, кг:
-      else 
-        span.product-head__content-section-title Вес одной упаковки, гр:
+      span.product-head__content-section-title Вес товара, кг:
 
       .packaging-list.product-head__packaging-list
         label.packaging-list__item
@@ -78,29 +76,21 @@
           input(type="radio" name='1234' value='150')
           span(data-custom-interaction) 150
 
-    .product-head__content-section 
-      .product-calculator.product-head__product-calculator
-          if head_type == 1
-            span.product-calculator__calculator-text(data-name='1234')
-              span 15 
-              | кг
-          .count-calculator(data-custom-interaction) 
+    .product-head__content-section.product-head__last-section 
+
+      .product-head__pricing
+        span.product-head__price 184 
+          span ₽
+        span.product-head__old-price 215 
+          span ₽
+
+
+      .buy-box.product-head__buy-box
+        .buy-box__button
+          button.button.button_style-1
+            span Купить 
+        .buy-box__calculator
+          .count-calculator.product-head__calculator(data-custom-interaction) 
             button.count-calculator__button.count-calculator__button_minus 
             input(type="number" value='1').count-calculator__input
             button.count-calculator__button.count-calculator__button_plus 
-          span.product-calculator__calculator-text шт
-
-    .product-head__content-section.product-head__last-section
-
-      .product-head__pricing
-        .product-head__pricing-element 
-          span Цена за 1 кг
-          span 163 ₽ 
-        .product-head__pricing-element 
-          span Цена за уп. (10 кг)
-          span 4 163 ₽
-
-      button.button.button_style-1.product-head__button 
-        svg.icon
-          use(xlink:href='./img/icons/sprite.svg#cart')
-        span Купить

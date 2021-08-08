@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
   Nav.init();
 
   calculator();
-  change_package();
+  buy_box();
   input_file();
   header_search();
 
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
     new BannerSlider($this).init();
   })
   //Product sliders
-  document.querySelectorAll('.product-slider').forEach($this => {
-    new ProductSlider($this).init();
+  document.querySelectorAll('.items-slider').forEach($this => {
+    new ItemsSlider($this).init();
   })
   //Image sliders
   document.querySelectorAll('.image-slider').forEach($this => {
@@ -183,19 +183,17 @@ function calculator() {
   document.addEventListener('input', input);
 }
 
-function change_package() {
+function buy_box() {
   let events = (event) => {
-    let $target = event.target.closest('.packaging-list__item input');
+    let $target = event.target.closest('.buy-box__button .button');
 
     if($target) {
-      let name = $target.getAttribute('name'),
-          $value = document.querySelector(`[data-name='${name}'] span`);
-
-      if($value) $value.innerHTML = $target.value;
+      let $parent = $target.closest('.buy-box');
+      $parent.classList.add('is-active');
     }
   }
 
-  document.addEventListener('change', events);
+  document.addEventListener('click', events);
 }
 
 function input_file() {
@@ -216,7 +214,7 @@ function input_file() {
   document.addEventListener('change', events);
 }
 
-class ProductSlider {
+class ItemsSlider {
   constructor($parent) {
     this.$parent = $parent
   }
@@ -227,9 +225,15 @@ class ProductSlider {
     this.$next = this.$parent.querySelector('.swiper-button-next');
     this.$pagination = this.$parent.querySelector('.swiper-pagination');
 
+    let slides_count = +this.$slider.getAttribute('data-slides') || 1,
+        slides_sm_count = +this.$slider.getAttribute('data-sm-slides') || slides_count,
+        slides_md_count = +this.$slider.getAttribute('data-md-slides') || slides_sm_count,
+        slides_lg_count = +this.$slider.getAttribute('data-lg-slides') || slides_md_count,
+        slides_xl_count = +this.$slider.getAttribute('data-xl-slides') || slides_lg_count;
+
     this.swiper = new Swiper(this.$slider, {
       touchStartPreventDefault: false,
-      slidesPerView: 2,
+      slidesPerView: slides_count,
       speed: 500,
       pagination: {
         el: this.$pagination,
@@ -242,13 +246,16 @@ class ProductSlider {
       },
       breakpoints: {
         [brakepoints.xl]: {
-          slidesPerView: 5
+          slidesPerView: slides_xl_count
         },
         [brakepoints.lg]: {
-          slidesPerView: 4
+          slidesPerView: slides_lg_count
         },
         [brakepoints.md]: {
-          slidesPerView: 3
+          slidesPerView: slides_md_count
+        },
+        [brakepoints.sm]: {
+          slidesPerView: slides_sm_count
         }
       }
     });
@@ -616,10 +623,6 @@ class ParallaxProductSlider {
       }
     });
 
-    //parallax
-    let x = 100 - (this.$parent.getBoundingClientRect().width/this.$background.getBoundingClientRect().width * 100);
-    console.log(x)
-
     this.mousemove = (event) => {
       let w = this.$slider.getBoundingClientRect().width,
           x = this.$slider.getBoundingClientRect().left,
@@ -631,89 +634,17 @@ class ParallaxProductSlider {
     this.checkPosition = () => {
       this.x_position += (this.x_value - this.x_position) * 0.1;
       
-      
       //parallax
       let x = 100 - (this.$parent.getBoundingClientRect().width/this.$background.getBoundingClientRect().width * 100);
       this.$background.style.transform = `translate3d(${-x * this.x_position}%, 0, 0)`;
-
-
       //scroll
       this.slider.setProgress(this.x_position, 0)
-
-      
+  
       requestAnimationFrame(this.checkPosition);
     }
 
     document.addEventListener('mousemove', this.mousemove);
     this.checkPosition();
     
-  }
-
-  destroy() {
-    
-  }
-
-}
-
-class Partners {
-  constructor($parent) {
-    this.$parent = $parent;
-  }
-
-  init() {
-    this.checkVersion = () => {
-      if(window.innerWidth>=brakepoints.lg && !mobile() && (!this.initialized || this.flag)) {
-        this.initDesktop();
-        this.flag = false;
-      } else if(window.innerWidth<brakepoints.lg && (!this.initialized || !this.flag)) {
-        if(this.initialized) this.destroyDesktop();
-        this.flag = true;
-      } 
-    }
-    this.checkVersion();
-    window.addEventListener('resize', this.checkVersion);
-    this.initialized = true;
-  }
-
-  initDesktop() {
-    this.$items = this.$parent.querySelectorAll('.partner-item');
-    this.$outer = this.$parent.querySelector('.section-partners__container');
-
-    this.$outer.classList.add('section-partners__container_desktop');
-    this.$items.forEach($this => {
-      $this.classList.add('partner-item_desktop');
-    })
-
-    this.getWidth = () => {
-      this.outerWidth = this.$outer.getBoundingClientRect().width;
-      this.innerWidth = 0;
-      this.$items.forEach($this => {
-        let m = +getComputedStyle($this).marginLeft.replace(/[a-zа-яё]/gi, ''),
-            w = $this.getBoundingClientRect().width;
-        this.innerWidth+=m+w;
-      })
-      this.slideWidth = this.innerWidth - this.outerWidth;
-    }
-
-    this.mousemove = (event) => {
-      let val = event.clientX/window.innerWidth;
-
-      gsap.to(this.$outer, {x:-val*this.slideWidth, ease:'power2.out', duration:1})
-    }
-
-    this.getWidth();
-
-    document.addEventListener('mousemove', this.mousemove)
-    window.addEventListener('resize', this.getWidth)  
-  }
-
-  destroyDesktop() {
-    document.removeEventListener('mousemove', this.mousemove);
-    window.removeEventListener('resize', this.getWidth);
-    gsap.set(this.$outer, {clearProps: "all"});
-    this.$outer.classList.remove('section-partners__container_desktop');
-    this.$items.forEach($this => {
-      $this.classList.remove('partner-item_desktop');
-    })
   }
 }
