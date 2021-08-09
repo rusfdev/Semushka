@@ -782,7 +782,7 @@
     box-shadow: var(--block-shadow);
     transition: width $trs1, height $trs1;
   }
-  &[data-touch], &[data-hover] {
+  &[data-hover] {
     &::before {
       width: calc(100% + 10px);
       height: calc(100% + 10px);
@@ -1115,7 +1115,7 @@
     box-shadow: var(--block-shadow);
     transition: width $trs1, height $trs1;
   }
-  &[data-touch], &[data-hover] {
+  &[data-hover] {
     &::before {
       width: calc(100% + 10px);
       height: calc(100% + 10px);
@@ -2206,7 +2206,7 @@
     transition: width $trs1, height $trs1;
     z-index: 4;
   }
-  &[data-hover], &[data-touch] {
+  &[data-hover] {
     &::after {
       width: calc(100% + 10px);
       height: calc(100% + 10px);
@@ -2276,7 +2276,7 @@
     border: 2px solid var(--color-accent-1);
     transition: width $trs1, height $trs1;
   }
-  &[data-hover], &[data-touch] {
+  &[data-hover] {
     &::before {
       width: calc(100% + 10px);
       height: calc(100% + 10px);
@@ -2552,6 +2552,7 @@
     background-color: #fff;
     color: var(--color-accent-2);
     transition: transform $trs1;
+    will-change: transform;
     svg {
       display: block;
       width: 100%;

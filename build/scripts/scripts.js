@@ -10,7 +10,6 @@ const $wrapper = document.querySelector('.wrapper');
 
 document.addEventListener("DOMContentLoaded", function() {
   CustomInteractionEvents.init();
-  Header.init();
   Modal.init();
   Nav.init();
 
@@ -442,24 +441,6 @@ class ProductPreviewSlider {
       
     }
 
-  }
-}
-
-const Header = {
-  $element: document.querySelector('.header'),
-
-  init: function () {
-
-    let check = () => {
-      let y = $wrapper.getBoundingClientRect().y,
-          fixed = this.$element.classList.contains('header_fixed');
-
-      if (y <= 0 && !fixed) this.$element.classList.add('header_fixed');
-      else if (y > 0 && fixed) this.$element.classList.remove('header_fixed');
-    }
-
-    window.addEventListener('scroll', check)
-    check();
   }
 }
 

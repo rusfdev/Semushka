@@ -1969,7 +1969,7 @@ ol:not([class]) {
     border-radius: 4px;
     box-shadow: var(--block-shadow);
     transition: width 0.15s ease-in-out, height 0.15s ease-in-out; }
-  .product-category-block[data-touch]::before, .product-category-block[data-hover]::before {
+  .product-category-block[data-hover]::before {
     width: calc(100% + 10px);
     height: calc(100% + 10px); }
   .product-category-block .image {
@@ -2225,7 +2225,7 @@ ol:not([class]) {
     border-radius: 4px;
     box-shadow: var(--block-shadow);
     transition: width 0.15s ease-in-out, height 0.15s ease-in-out; }
-  .certificate-block[data-touch]::before, .certificate-block[data-hover]::before {
+  .certificate-block[data-hover]::before {
     width: calc(100% + 10px);
     height: calc(100% + 10px); }
   .certificate-block .image {
@@ -3080,10 +3080,10 @@ ol:not([class]) {
     box-shadow: var(--block-shadow);
     transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
     z-index: 4; }
-  .recipe-block[data-hover]::after, .recipe-block[data-touch]::after {
+  .recipe-block[data-hover]::after {
     width: calc(100% + 10px);
     height: calc(100% + 10px); }
-  .recipe-block[data-hover] .recipe-block__mask::after, .recipe-block[data-touch] .recipe-block__mask::after {
+  .recipe-block[data-hover] .recipe-block__mask::after {
     width: calc(100% + 10px);
     height: calc(100% + 10px); }
   .recipe-block__image {
@@ -3135,7 +3135,7 @@ ol:not([class]) {
     border-radius: 4px;
     border: 2px solid var(--color-accent-1);
     transition: width 0.15s ease-in-out, height 0.15s ease-in-out; }
-  .recipe-day[data-hover]::before, .recipe-day[data-touch]::before {
+  .recipe-day[data-hover]::before {
     width: calc(100% + 10px);
     height: calc(100% + 10px); }
   .recipe-day__text-content {
@@ -3350,7 +3350,8 @@ ol:not([class]) {
     border-radius: 50%;
     background-color: #fff;
     color: var(--color-accent-2);
-    transition: transform 0.15s ease-in-out; }
+    transition: transform 0.15s ease-in-out;
+    will-change: transform; }
     .image-360 .icon svg {
       display: block;
       width: 100%;
@@ -3362,15 +3363,13 @@ ol:not([class]) {
 /*========== Header ==========*/
 .header {
   --spacer: var(--grid-gutter-x);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.05);
   background-color: #fff;
   z-index: 100; }
-  .header_fixed {
-    position: fixed; }
   .header__container {
     height: 65px;
     display: flex;
