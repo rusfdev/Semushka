@@ -56,11 +56,14 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
-
-  }
   @include media-breakpoint-down(sm) {
     margin-bottom: 100px;
+    &_border {
+      &::after {
+        bottom: -50px;
+        width: calc(100% - var(--container-gutter-x) * 2);
+      }
+    }
     &__head {
       margin-bottom: 40px;
     }

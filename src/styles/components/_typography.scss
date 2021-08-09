@@ -138,7 +138,6 @@ ul:not([class]), ol:not([class]) {
 }
 
 ul:not([class]) {
-  padding-left: 40px;
   li:not([class]) {
     position: relative;
     padding-left: calc(8px + 1rem);
@@ -154,14 +153,10 @@ ul:not([class]) {
       background-color: var(--color-accent-1);
     }
   }
-  @include media-breakpoint-down(sm) {
-    padding-left: 20px;
-  }
 }
 
 ol:not([class]) {
   counter-reset: section;
-  padding-left: 40px;
   li:not([class]) {
     padding-left: 2em;
     position: relative;
@@ -173,8 +168,5 @@ ol:not([class]) {
       top: 0;
       color: var(--color-accent-2);
     }
-  }
-  @include media-breakpoint-down(sm) {
-    padding-left: 20px;
   }
 }

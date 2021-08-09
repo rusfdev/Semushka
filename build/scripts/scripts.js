@@ -1,4 +1,4 @@
-const brakepoints = {
+const breakpoints = {
   sm: 576,
   md: 768,
   lg: 1024,
@@ -164,9 +164,18 @@ function calculator() {
       let $input = $target.parentNode.querySelector('input');
 
       if($target.classList.contains('count-calculator__button_minus')) {
-        $input.value = Math.max(+$input.value - 1, 1)
+        
+        //
+        if(+$input.value <= 1) {
+          let $parent = $target.closest('.buy-box');
+          $parent.classList.remove('is-active');
+        }
+
+
+        $input.value = Math.max(+$input.value - 1, 1);
+      
       } else {
-        $input.value = +$input.value + 1
+        $input.value = +$input.value + 1;
       }
     }
   }
@@ -245,16 +254,16 @@ class ItemsSlider {
         nextEl: this.$next
       },
       breakpoints: {
-        [brakepoints.xl]: {
+        [breakpoints.xl]: {
           slidesPerView: slides_xl_count
         },
-        [brakepoints.lg]: {
+        [breakpoints.lg]: {
           slidesPerView: slides_lg_count
         },
-        [brakepoints.md]: {
+        [breakpoints.md]: {
           slidesPerView: slides_md_count
         },
-        [brakepoints.sm]: {
+        [breakpoints.sm]: {
           slidesPerView: slides_sm_count
         }
       }
@@ -545,7 +554,7 @@ class Filter {
     }
 
     window.addEventListener('resize', () => {
-      if( this.state() && window.innerWidth >= brakepoints.lg ) {
+      if( this.state() && window.innerWidth >= breakpoints.lg ) {
         this.close();
       }
     })
@@ -609,17 +618,26 @@ class ParallaxProductSlider {
     this.x_value = 0;
 
     this.$slider = this.$parent.querySelector('.swiper-container');
+    this.$pagination = this.$parent.querySelector('.swiper-pagination');
     this.$background = this.$parent.querySelector('.parallax-product-slider__background');
 
     this.slider = new Swiper(this.$slider, {
       touchStartPreventDefault: false,
-      freeMode: true,
-      slidesPerView: 'auto',
-      enabled: false,
+      slidesPerView: 2,
+      enabled: true,
       speed: 500,
-      lazy: {
-        loadOnTransitionStart: true,
-        loadPrevNext: true
+      pagination: {
+        el: this.$pagination,
+        clickable: true,
+        bulletElement: 'button'
+      },
+      breakpoints: {
+        [breakpoints.lg]: {
+          slidesPerView: 'auto'
+        },
+        [breakpoints.md]: {
+          slidesPerView: 3
+        }
       }
     });
 
@@ -632,19 +650,25 @@ class ParallaxProductSlider {
     }
 
     this.checkPosition = () => {
-      this.x_position += (this.x_value - this.x_position) * 0.1;
+
+      if(window.innerWidth >= breakpoints.lg) {
+
+        this.x_position += (this.x_value - this.x_position) * 0.1;
       
-      //parallax
-      let x = 100 - (this.$parent.getBoundingClientRect().width/this.$background.getBoundingClientRect().width * 100);
-      this.$background.style.transform = `translate3d(${-x * this.x_position}%, 0, 0)`;
-      //scroll
-      this.slider.setProgress(this.x_position, 0)
-  
+        //parallax
+        let x = 100 - (this.$parent.getBoundingClientRect().width/this.$background.getBoundingClientRect().width * 100);
+        this.$background.style.transform = `translate3d(${-x * this.x_position}%, 0, 0)`;
+        //scroll
+        this.slider.setProgress(this.x_position, 0);
+
+      }
+    
       requestAnimationFrame(this.checkPosition);
     }
 
-    document.addEventListener('mousemove', this.mousemove);
-    this.checkPosition();
-    
+    if(device.desktop()) {
+      document.addEventListener('mousemove', this.mousemove);
+      this.checkPosition();
+    }
   }
 }

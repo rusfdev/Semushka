@@ -106,19 +106,14 @@ block content
                 use(xlink:href='./img/icons/sprite.svg#play')
 
         .shops-section__item 
-          .shops-section__item-slider
-            .swiper.image-slider
-              .swiper-container
-                .swiper-wrapper
-                  .swiper-slide.image.image_cover
-                    img(data-src="./img/Rectangle 182.jpg", alt="image").swiper-lazy
-                  .swiper-slide.image.image_cover
-                    img(data-src="./img/Rectangle 182.jpg", alt="image").swiper-lazy
-                  .swiper-slide.image.image_cover
-                    img(data-src="./img/Rectangle 182.jpg", alt="image").swiper-lazy
-              .swiper-pagination
+          .shops-section__item-image 
+            a(href="#").image-360.image.image_cover 
+              img(src="./img/Rectangle 182.jpg", alt="image").lazyload
+              .icon
+                svg
+                  use(xlink:href='./img/icons/sprite.svg#360')
 
-            a(href="#").link-dashed Ссылка 
+
 
           .shops-section__item-label
 
