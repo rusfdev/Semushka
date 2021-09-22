@@ -134,7 +134,7 @@ mixin pagination()
           svg.icon
             use(xlink:href='./img/icons/sprite.svg#right-arrow')
 
-mixin recipe-block(type)
+mixin recipe-block(type, content)
   a(href="#").recipe-block
     .recipe-block__mask
     .recipe-block__image
@@ -149,15 +149,16 @@ mixin recipe-block(type)
           | Карамелизованная морковь с кешью кремом
         else 
           | Салат с киноа, авокадо и шампиньонами
-      .recipe-info 
-        .recipe-info__item 
-          svg.icon(viewBox="0 0 21 21")
-            use(xlink:href='./img/icons/sprite.svg#wall-clock')
-          | 1 час
-        .recipe-info__item 
-          svg.icon(viewBox="0 0 29 20")
-            use(xlink:href='./img/icons/sprite.svg#dish')
-          | 320 ккал
+      if content !== '2'
+        .recipe-info 
+          .recipe-info__item 
+            svg.icon(viewBox="0 0 21 21")
+              use(xlink:href='./img/icons/sprite.svg#wall-clock')
+            | 1 час
+          .recipe-info__item 
+            svg.icon(viewBox="0 0 29 20")
+              use(xlink:href='./img/icons/sprite.svg#dish')
+            | 320 ккал
 
 
 mixin recipe-day()

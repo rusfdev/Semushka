@@ -67,10 +67,62 @@ block content
               span Загрузить еще 
 
         .blog-section__block(data-tabs='block')
-          h2 таб 2
+          .tag-list.blog-section__tag-list
+            .tag-list__container 
+              a(href="#").tag-element.tag-list__element.is-active
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#recipe-book')
+                span Все рецепты
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#bell-covering-hot-dish')
+                span Горячие блюда
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#salad')
+                span Салаты
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#nuggets')
+                span Закуски
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#cupcake')
+                span Сладкое
+          
+          .blog-grid 
+            +recipe-block(1, '2')
+            +recipe-block(2, '2')
+            +recipe-block(1, '2')
 
         .blog-section__block(data-tabs='block')
-          h2 таб 3
+          .tag-list.blog-section__tag-list
+            .tag-list__container 
+              a(href="#").tag-element.tag-list__element.is-active
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#recipe-book')
+                span Все рецепты
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#bell-covering-hot-dish')
+                span Горячие блюда
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#salad')
+                span Салаты
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#nuggets')
+                span Закуски
+              a(href="#").tag-element.tag-list__element
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#cupcake')
+                span Сладкое
+          
+          .blog-grid 
+            +recipe-block(2, '2')
+            +recipe-block(1, '2')
+            +recipe-block(2, '2')
 
 
   include blocks/product-slider

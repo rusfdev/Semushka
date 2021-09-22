@@ -3117,8 +3117,9 @@ ol:not([class]) {
     position: relative;
     z-index: 2; }
   .recipe-block__title {
-    width: 100%;
-    margin-bottom: 20px; }
+    width: 100%; }
+    .recipe-block__title:not(:last-child) {
+      margin-bottom: 20px; }
   @media (max-width: 575.98px) {
     .recipe-block__image {
       flex: 0 0 250px; }

@@ -2202,7 +2202,9 @@
   }
   &__title {
     width: 100%;
-    margin-bottom: 20px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
   }
   @include media-breakpoint-down(sm) {
     &__image {
