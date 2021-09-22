@@ -1,0 +1,69 @@
+extends layout/layout
+
+block variables
+  -var page_title = 'Блог'
+  -var title = sitename + ' - ' + page_title
+
+block content
+  include blocks/components
+
+  -var breadcrumbs_links = ['Главная', page_title]
+  include blocks/breadcrumbs
+
+  section.section.blog-section
+    .container 
+      .section__head
+        h1.section__title Блог
+
+      .tab-head.blog-section__tab-head
+        .tab-head__container
+          a(href="#").tab-head__link.is-active Рецепты
+          a(href="#").tab-head__link Советы диетолога
+          a(href="#").tab-head__link Полезные советы
+
+
+      .tag-list.blog-section__tag-list
+        .tag-list__container 
+          a(href="#").tag-element.tag-list__element.is-active
+            svg.icon
+              use(xlink:href='./img/icons/sprite.svg#recipe-book')
+            span Все рецепты
+          a(href="#").tag-element.tag-list__element
+            svg.icon
+              use(xlink:href='./img/icons/sprite.svg#bell-covering-hot-dish')
+            span Горячие блюда
+          a(href="#").tag-element.tag-list__element
+            svg.icon
+              use(xlink:href='./img/icons/sprite.svg#salad')
+            span Салаты
+          a(href="#").tag-element.tag-list__element
+            svg.icon
+              use(xlink:href='./img/icons/sprite.svg#nuggets')
+            span Закуски
+          a(href="#").tag-element.tag-list__element
+            svg.icon
+              use(xlink:href='./img/icons/sprite.svg#cupcake')
+            span Сладкое
+      
+      .blog-grid 
+        +recipe-block(1)
+        +recipe-block(2)
+        +recipe-block(1)
+        +recipe-day()
+        +recipe-block(1)
+        +recipe-block(2)
+        +recipe-block(1)
+        +recipe-block(1)
+        +recipe-block(2)
+        +recipe-block(1)
+        +recipe-block(1)
+        +recipe-block(2)
+
+      +pagination(1)
+      .load-more 
+        a(href="#").button.button_style-2
+          span Загрузить еще 
+
+
+
+  include blocks/product-slider

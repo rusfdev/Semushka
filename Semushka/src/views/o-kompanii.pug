@@ -1,0 +1,123 @@
+extends layout/layout
+
+block variables
+  -var page_title = 'О компании'
+  -var title = sitename + ' - ' + page_title
+
+block content
+  include blocks/components
+
+  -var breadcrumbs_links = ['Главная', page_title]
+  include blocks/breadcrumbs
+
+  section.section.section_border.about-company-section
+    .container 
+      .section__head
+        h1.section__title О компании
+      .about-company-section__container 
+        .swiper.image-slider.about-company-section__slider
+          .swiper-container
+            .swiper-wrapper
+              .swiper-slide.image.image_cover
+                img(data-src="./img/Rectangle 182.jpg", alt="image").swiper-lazy
+              .swiper-slide.image.image_cover
+                img(data-src="./img/Rectangle 182.jpg", alt="image").swiper-lazy
+              .swiper-slide.image.image_cover
+                img(data-src="./img/Rectangle 182.jpg", alt="image").swiper-lazy
+          .swiper-pagination
+
+        .about-company-section__text 
+          p <strong><mark>В 2002 году</mark></strong> началась история «Семушки» когда группе единомышленников пришла идея создать компанию по производству семечек. Торговую марку назвали Семушкой — так в армянском народном сленге называют семечки 
+          p В течение последующих лет был расширен ассортимент выпускаемой продукции, появились: тыквенные, белые и полосатые семечки.
+          p <strong><mark>В 2012 году</mark></strong> было принято решение о ребрендинге и переориентации производимого ассортимента с семечек на орехи и сухофрукты. В этом же году вышла первая линейка орехов и сухофруктов в упаковке дой-пак из крафт-бумаги, которая позволяет увидеть и оценить внешний вид продукта. Новизна и удобство упаковки были по достоинству оценены нашими покупателями. 
+          p <strong><mark>В 2014 году</mark></strong> «Семушка» первой вывела на рынок линейку армянских сухофруктов, включающей такие новые для российского рынка позиции, как сушеные персики, груши, красная слива и хурма.
+
+        .about-company-section__wide-text 
+          p <strong><mark>В 2014 году</mark></strong> был запущен кондитерский цех по производству чурчхелы и фруктовой пастилы.
+          p <strong><mark>В 2017 году</mark></strong> в ассортименте появились натуральные сушеные тропические фрукты из Коста-Рики, произведенные без сахара и консервантов - ананасы, манго, папайа и бананы.
+          p <strong><mark>В 2017 - 2019 году</mark></strong> традиционная линейка жареных орехов в коричневых крафтах пополнилась «Зеленой линейкой» сушеных орехов и «Голубой линейкой» соленых орехов.
+          p <strong><mark>В 2019 году</mark></strong> была выпущена линейка шоколада с орехами, представленная двумя позициями миндаля в темном и молочном бельгийском шоколаде. Было запущено производство по бланшированию и дроблению орехов и семян.
+          p <strong><mark>В 2020 году</mark></strong> мы открыли свой первый фирменный магазин в Москве, в котором представлен весь ассортимент продукции компании.
+
+  section.section.section_border.production-section 
+    .container 
+      .section__head
+        h2.section__title Производство
+      .production-section__container 
+        .production-section__top-text
+          p <strong><mark>В 2017 году</mark></strong> в целях расширения производственных и складских площадей, а также оптимизации логистических процессов, производство «Семушки» переехало на новую площадку, расположенную в деревне Новосельцево Мытищинского района Подмосковья.
+          p Каждый месяц мы выпускаем <strong><mark>1 500 000 пачек</mark></strong> самых вкусных и качественных орехов, сухофруктов и сладостей.
+          p Производственное оборудование включает современные автоматизированные фасовочные линии, жарочные печи воздушной обжарки; фотосепаратор и металлодетектор; бланшировочные станки и другое профессиональное оборудование.
+        
+        .production-advantages.production-section__advantages
+          .production-advantages__item 
+            img(src="./img/icons/eco-factory.svg", alt="icon").icon
+            .production-advantages__item-content 
+              h6.production-advantages__item-title 6 тыс. м2
+              .production-advantages__item-text Суммарная площадь нашего производства
+          .production-advantages__item 
+            img(src="./img/icons/team.svg", alt="icon").icon
+            .production-advantages__item-content 
+              h6.production-advantages__item-title 120 человек
+              .production-advantages__item-text Общее количество сотрудников на предприятие
+          .production-advantages__item 
+            img(src="./img/icons/shipped.svg", alt="icon").icon
+            .production-advantages__item-content 
+              h6.production-advantages__item-title 20 машин 
+              .production-advantages__item-text Грузовых и полу-грузовых, находится в нашем автопарке 
+        
+        .production-section__bottom 
+          .production-section__bottom-text 
+            p Компания «Семушка» осуществляет прямой импорт сырья для своей продукции со всего мира. Сухофрукты по большей части отбираются и фасуются вручную. При засолке орехов и семечек используется как собственная технология соления в соляном растворе (арахис, миндаль, кешью), так и традиционная обвалка в соли в барабане (фисташки и семечки).
+            p Все сырье проходит тщательный входной контроль, подвергается органолептическим и лабораторным исследованиям. После поступления в производство сырье дополнительно перебирается на инспекционных конвейерах вручную, для исключения попадания дефектных или поврежденных ядер и плодов, после чего поступает в производственные цеха для жарки, соления и фасовки.
+          
+          a(href="#").video-block.image.image_cover
+            img(data-src="./img/Rectangle 117.jpg", alt="image").lazyload
+            .icon
+              svg
+                use(xlink:href='./img/icons/sprite.svg#play')
+
+  section.section.certificates-section
+    .container 
+      .section__head
+        h3.section__title Наши сертификаты
+      .section__container.certificates-section__container 
+        +certificate('./img/certificates/1.jpg')
+        +certificate('./img/certificates/2.jpg')
+        +certificate('./img/certificates/3.jpg')
+        +certificate('./img/certificates/4.jpg')
+        +certificate('./img/certificates/5.jpg')
+  
+  
+  section.section.shops-section
+    .container 
+      .section__head
+        h3.section__title Магазины 
+      .shops-section__container 
+        .shops-section__top 
+          .shops-section__top-text 
+            p В фирменных магазинах «Семушки» вы найдете не только отборные орехи, натуральные сухофрукты и сладости, но и первый в столице ореховый бар. Ваши любимые продукты и новинки, весь наш ассортимент в одном месте. 
+            p В фирменных магазинах можно купить масло из любого вида орехов или семян, реализующееся в день отжима. Благодаря современным технологиям все масла «Семушки» — холодного отжима без добавок и примесей. Только экологически чистый и полезный продукт.
+            p Приходите, чтобы ощутить настоящую силу природы и получить максимальную пользу для своего здоровья.
+          a(href="#").video-block.image.image_cover
+            img(data-src="./img/Rectangle 117.jpg", alt="image").lazyload
+            .icon
+              svg
+                use(xlink:href='./img/icons/sprite.svg#play')
+
+        .shops-section__item 
+          .shops-section__item-image 
+            a(href="#").image-360.image.image_cover 
+              img(src="./img/Rectangle 182.jpg", alt="image").lazyload
+              .icon
+                svg
+                  use(xlink:href='./img/icons/sprite.svg#360')
+
+
+
+          .shops-section__item-label
+
+            .invitate-element 
+              .invitate-element__text Ждем вас по адресу:
+              .h6.invitate-element__title Москва, ул. Мясницкая, 13, с. 3
+    

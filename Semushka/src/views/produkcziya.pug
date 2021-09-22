@@ -1,0 +1,49 @@
+extends layout/layout
+
+block variables
+  -var page_title = 'Продукция'
+  -var title = sitename + ' - ' + page_title
+
+block content
+  include blocks/components
+
+  -var breadcrumbs_links = ['Главная', page_title]
+  include blocks/breadcrumbs
+
+  section.section.products-section
+    .container 
+      .section__head.section__head_with-button
+        h1.section__title.section__title_with-button Продукция
+        a(href="./katalog.html").button.button_style-2.button_arrow
+          span Смотреть все
+          svg.icon
+            use(xlink:href='./img/icons/sprite.svg#right-arrow')
+      .products-section__content
+        a(href="#").product-category-block
+          .image.image_contain
+            img(data-src="./img/categories/1.png", alt="image").lazyload
+          h6.product-category-block__title Орехи
+        a(href="#").product-category-block
+          .image.image_contain
+            img(data-src="./img/categories/2.png", alt="image").lazyload
+          h6.product-category-block__title Сухофрукты
+        a(href="#").product-category-block
+          .image.image_contain
+            img(data-src="./img/categories/3.png", alt="image").lazyload
+          h6.product-category-block__title Смеси
+        a(href="#").product-category-block
+          .image.image_contain
+            img(data-src="./img/categories/4.png", alt="image").lazyload
+          h6.product-category-block__title Семечки
+        a(href="#").product-category-block
+          .image.image_contain
+            img(data-src="./img/categories/5.png", alt="image").lazyload
+          h6.product-category-block__title Сладости
+        a(href="#").product-category-block
+          .image.image_contain
+            img(data-src="./img/categories/6.png", alt="image").lazyload
+          h6.product-category-block__title Наборы
+      
+  section.section
+    .container
+      include blocks/banner1

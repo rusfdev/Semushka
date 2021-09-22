@@ -72,6 +72,23 @@
       margin: auto;
     }
   }
+  &__cart-button {
+    display: flex;
+    align-items: center;
+    width: auto;
+    span {
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 14px;
+      min-width: 14px;
+      text-align: center;
+      background-color: var(--color-accent-1);
+      color: #fff;
+      padding: 0 4px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+  }
   @include media-breakpoint-up(lg) {
     &__search-open-item, &__search-close-button {
       display: none;

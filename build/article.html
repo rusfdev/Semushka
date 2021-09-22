@@ -65,10 +65,10 @@
                   <svg class="icon">
                     <use xlink:href="./img/icons/sprite.svg#user"></use>
                   </svg></a></li>
-              <li class="header__small-buttons-item"><a class="header__small-button link" href="#">
+              <li class="header__small-buttons-item"><a class="header__small-button header__cart-button link" href="#">
                   <svg class="icon">
                     <use xlink:href="./img/icons/sprite.svg#cart"></use>
-                  </svg></a></li>
+                  </svg><span>100</span></a></li>
               <li class="header__small-buttons-item"><a class="header__small-button link" href="#"><span>en</span></a></li>
               <li class="header__small-buttons-item header__search-open-item">
                 <button class="header__small-button link header__search-open-button" aria-label="open nav">
@@ -481,8 +481,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="742045">
-                      <label class="checkbox__label" for="742045">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="977108">
+                      <label class="checkbox__label" for="977108">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -541,8 +541,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="575036">
-                      <label class="checkbox__label" for="575036">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="37790">
+                      <label class="checkbox__label" for="37790">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -573,8 +573,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="705890">
-                      <label class="checkbox__label" for="705890">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="844007">
+                      <label class="checkbox__label" for="844007">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -604,8 +604,8 @@
               </label>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="230404">
-                      <label class="checkbox__label" for="230404">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="562002">
+                      <label class="checkbox__label" for="562002">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit form__buttons">
@@ -657,8 +657,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="386870">
-                      <label class="checkbox__label" for="386870">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="896759">
+                      <label class="checkbox__label" for="896759">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -707,6 +707,18 @@
         </div>
       </div>
     </div>
+    <div class="modal video-modal" id="video" style="display:none;">
+      <div class="modal__wrapper" data-scroll-lock-scrollable>
+        <div class="modal-block video-modal__block">
+          <button class="modal-close" data-modal="close"></button>
+          <div class="modal-block__container">
+            <div class="video-modal__element">
+              <iframe src="" allow="autoplay"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--scripts-->
     <script src="./scripts/libs/lazysizes.min.js"></script>
     <script src="./scripts/libs/scroll-lock.min.js"></script>
@@ -716,7 +728,7 @@
     <script src="./scripts/libs/inputmask.min.js"></script>
     <script src="./scripts/libs/current-device.min.js"></script>
     <script src="./scripts/scripts.js"></script>
-    <!--preview only-->
+    <!--preview only -->
     <link rel="stylesheet" href="./styles/helper.css">
     <div class="helper"><a class="helper__trigger" href="javascript:void(0);">
         <svg class="icon" viewBox="0 0 100 100" fill="currentColor">

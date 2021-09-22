@@ -18,6 +18,15 @@
     height: 100%;
     display: flex;
     padding: var(--container-gutter-x);
+    &::-webkit-scrollbar {
+      width: 8px
+    }
+    &::-webkit-scrollbar-track {
+      background-color: var(--color-scrollbar-track);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-scrollbar-thumb);
+    }
   }
   &-close {
     position: absolute;
@@ -114,6 +123,38 @@
     &__buttons {
       grid-template-columns: 100%;
       gap: 10px;
+    }
+  }
+}
+
+.video-modal {
+  &__block {
+    padding: 60px 40px 40px 40px;
+    max-width: 700px;
+  }
+  &__element {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--color-preload-bg);
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%;
+    }
+    iframe {
+      display: block;
+      border: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__block {
+      padding: 50px var(--container-gutter-x) 20px var(--container-gutter-x);
     }
   }
 }

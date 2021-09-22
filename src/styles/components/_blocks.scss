@@ -543,7 +543,7 @@
 .packaging-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 0.5em;
+  gap: 0.5em;
   &__item {
     cursor: default;
     input {
@@ -1212,6 +1212,9 @@
       background-color: rgba(43, 41, 41, 0.5);
       transition: opacity .5s $out;
       opacity: 0;
+    }
+    img {
+      object-position: center right;
     }
   }
   &__text {
@@ -2004,14 +2007,11 @@
   &:last-child {
     margin: 0;
   }
-  --gutter: 35px;
   &__container {
     display: flex;
   }
   &__content {
-    flex: 0 0 560px;
-    display: flex;
-    flex-direction: column;
+    padding-right: var(--grid-gutter-x);
   }
   &__map {
     position: relative;
@@ -2030,32 +2030,11 @@
     font-weight: 700;
     flex: 0 0 auto;
   }
-  &__head {
-    flex: 0 0 auto;
-    position: relative;
-    padding: var(--gutter);
-    background-color: #F1F1F1;
-    z-index: 2;
-    .form {
-      position: relative;
-      z-index: 2;
-    }
-  }
   &__elements {
-    flex: 0 0 440px;
-    overflow: auto;
-    &::-webkit-scrollbar {
-      width: 8px
-    }
-    &::-webkit-scrollbar-track {
-      background-color: var(--color-scrollbar-track);
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--color-scrollbar-thumb);
-    }
+    padding-bottom: 30px;
   }
   &__element {
-    padding: 20px var(--gutter);
+    padding: 20px 0;
     &:not(:last-child) {
       border-bottom: 1px solid #F2F2F2;
     }
@@ -2069,27 +2048,12 @@
     color: var(--color-accent-1);
     margin-bottom: 2px;
   }
-  @include media-breakpoint-up(lg) {
-    &__title {
-      padding-left: var(--gutter);
-    }
-    &__section-title {
-      padding-left: var(--gutter);
-    }
-  }
-  @include media-breakpoint-up(xxl) {
-    &__elements {
-      flex: 0 0 550px;
-    }
-  }
   @include media-breakpoint-down(lg) {
     &__container {
       display: block;
     }
-    &__head {
-      width: 100vw;
-      transform: translateX(calc(var(--content-gutter) * -1));
-      padding: var(--gutter) calc(var(--content-gutter));
+    &__content {
+      padding: 0;
     }
     &__elements {
       width: 100vw;
@@ -2108,11 +2072,6 @@
     }
   }
   @include media-breakpoint-down(sm) {
-    &__head {
-      width: calc(100% + var(--container-gutter-x) * 2);
-      transform: translateX(calc(var(--container-gutter-x) * -1));
-      padding: 30px var(--container-gutter-x);
-    }
     &__elements {
       width: calc(100% + var(--container-gutter-x) * 2);
       transform: translateX(calc(var(--container-gutter-x) * -1));
@@ -2326,6 +2285,12 @@
 .blog-section {
   &__tab-head, &__tag-list {
     margin-bottom: 40px;
+  }
+  &__block {
+    display: none;
+    &.is-active {
+      display: block;
+    }
   }
 }
 

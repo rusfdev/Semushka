@@ -1,0 +1,74 @@
+extends layout/layout
+
+block variables
+  -var page_title = 'Контакты'
+  -var title = sitename + ' - ' + page_title
+
+block content
+  include blocks/components
+
+  -var breadcrumbs_links = ['Главная', page_title]
+  include blocks/breadcrumbs
+
+  -var map_type = 2;
+  include blocks/map
+
+  section.section.contacts-section
+    .container 
+      .contacts-section__container 
+        //box
+        .contact-box 
+          .contact-box__content 
+            h6.contact-box__title Отдел продаж
+            .contact-box__elements 
+              .contact-box__item
+                span.contact-box__item-head
+                  svg.icon
+                    use(xlink:href='./img/icons/sprite.svg#phone')
+                  | Телефон
+                span.contact-box__item-text 
+                  a(href="tel:74991103044") +7 (499) 110 30 44
+              .contact-box__item
+                span.contact-box__item-head
+                  svg.icon
+                    use(xlink:href='./img/icons/sprite.svg#mail')
+                  | Почта
+                span.contact-box__item-text 
+                  a(href="mailto:opt@semushka-m.ru") opt@semushka-m.ru
+              .contact-box__item
+                span.contact-box__item-head
+                  svg.icon
+                    use(xlink:href='./img/icons/sprite.svg#clock')
+                  | Режим работы
+                span.contact-box__item-text 
+                  | <strong>Пн-Пт:</strong> с 10:00 до 19:00
+        //box
+        .contact-box 
+          .contact-box__content 
+            h6.contact-box__title Центральный офис
+            .contact-box__elements 
+              .contact-box__item
+                span.contact-box__item-head
+                  svg.icon
+                    use(xlink:href='./img/icons/sprite.svg#phone')
+                  | Телефон
+                span.contact-box__item-text 
+                  a(href="tel:74954887285") +7 (495) 488 72 85
+              .contact-box__item
+                span.contact-box__item-head
+                  svg.icon
+                    use(xlink:href='./img/icons/sprite.svg#mail')
+                  | Почта
+                span.contact-box__item-text 
+                  a(href="mailto:opt@semushka-m.ru") opt@semushka-m.ru
+              .contact-box__item
+                span.contact-box__item-head
+                  svg.icon
+                    use(xlink:href='./img/icons/sprite.svg#geo')
+                  | Адрес
+                span.contact-box__item-text 
+                  | 127018, Москва, 2-я Ямская улица, дом 9.
+
+  section.section
+    .container
+      include blocks/banner1        

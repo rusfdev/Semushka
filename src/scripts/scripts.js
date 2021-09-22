@@ -9,12 +9,15 @@ const breakpoints = {
 const $wrapper = document.querySelector('.wrapper');
 
 document.addEventListener("DOMContentLoaded", function() {
+  //set scrollbar width
+  document.documentElement.style.setProperty('--scrollbar-width', `${scrollLock.getPageScrollBarWidth()}px`);
+  
   CustomInteractionEvents.init();
   Modal.init();
   Nav.init();
 
-  calculator();
-  buy_box();
+  //calculator();
+  //buy_box();
   input_file();
   header_search();
 
@@ -154,43 +157,6 @@ function header_search() {
   })
 }
 
-function calculator() {
-
-  let events = (event) => {
-    let $target = event.target.closest('.count-calculator__button');
-
-    if($target) {
-      let $input = $target.parentNode.querySelector('input');
-
-      if($target.classList.contains('count-calculator__button_minus')) {
-        
-        //
-        if(+$input.value <= 1) {
-          let $parent = $target.closest('.buy-box');
-          $parent.classList.remove('is-active');
-        }
-
-
-        $input.value = Math.max(+$input.value - 1, 1);
-      
-      } else {
-        $input.value = +$input.value + 1;
-      }
-    }
-  }
-
-  let input = (event) => {
-    let $target = event.target.closest('.count-calculator__input');
-
-    if($target) {
-      $target.value = Math.max(+$target.value, 1)
-    }
-  }
-
-  document.addEventListener('click', events);
-  document.addEventListener('input', input);
-}
-
 function buy_box() {
   let events = (event) => {
     let $target = event.target.closest('.buy-box__button .button');
@@ -242,6 +208,7 @@ class ItemsSlider {
     this.swiper = new Swiper(this.$slider, {
       touchStartPreventDefault: false,
       slidesPerView: slides_count,
+      centerInsufficientSlides: true,
       speed: 500,
       pagination: {
         el: this.$pagination,
@@ -459,25 +426,25 @@ const Modal = {
 
     document.addEventListener('click', (event) => {
       let $open = event.target.closest('[data-modal="open"]'),
-        $close = event.target.closest('[data-modal="close"]'),
-        $wrap = event.target.closest('.modal'),
-        $block = event.target.closest('.modal-block');
+          $close = event.target.closest('[data-modal="close"]'),
+          $wrap = event.target.closest('.modal'),
+          $block = event.target.closest('.modal-block');
 
       //open
       if ($open) {
         event.preventDefault();
-        let $modal = document.querySelector(`${$open.getAttribute('href')}`);
-        this.open($modal);
+        let $modal = document.querySelector(`${$open.getAttribute('href')}`),
+            video = $open.getAttribute('data-video');
+
+        this.open($modal, video);
       }
       //close 
       else if ($close || (!$block && $wrap)) {
         this.close();
       }
     })
-
-    //this.open(document.querySelector('#product'))
   },
-  open: function ($modal) {
+  open: function ($modal, video) {
     let open = ()=> {
       scrollLock.disablePageScroll();
       $modal.classList.add('active');
@@ -486,6 +453,10 @@ const Modal = {
       this.animation = gsap.effects.modal($modal, $content);
       this.animation.play();
       this.$active = $modal;
+      //play video
+      if(video && $modal.querySelector('iframe')) {
+        $modal.querySelector('iframe').setAttribute('src', video);
+      } 
     }
     if($modal) {
       if(this.$active) this.close(open);
@@ -494,16 +465,16 @@ const Modal = {
   },
   close: function (callback) {
     if (this.$active) {
-
-      if(this.timeout) {
-        clearTimeout(this.timeout);
-        delete this.timeout;
-      }
-
       this.animation.timeScale(2).reverse().eventCallback('onReverseComplete', ()=> {
         delete this.animation;
         scrollLock.enablePageScroll();
         this.$active.classList.remove('active');
+
+        //remove video
+        if(this.$active.querySelector('iframe')) {
+          this.$active.querySelector('iframe').setAttribute('src', '');
+        } 
+
         delete this.$active;
         if (callback) callback();
       })
