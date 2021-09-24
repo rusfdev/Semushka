@@ -2439,11 +2439,6 @@
   &__item-image {
     grid-column: 1/6;
     position: relative;
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 70%;
-    }
     iframe {
       display: block;
       position: absolute;

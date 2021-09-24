@@ -638,6 +638,9 @@ a {
     max-width: 580px; }
     .modal-block__title {
       text-align: center; }
+    .modal-block__container {
+      position: relative;
+      z-index: 1; }
   @media (max-width: 575.98px) {
     .modal-block {
       padding: 40px 20px 30px 20px; }
@@ -707,6 +710,27 @@ a {
 
 @media (max-width: 575.98px) {
   .video-modal__block {
+    padding: 50px var(--container-gutter-x) 20px var(--container-gutter-x); } }
+
+.modal-360__block {
+  padding: 60px 40px 40px 40px;
+  max-width: 100%;
+  height: 100%; }
+
+.modal-360__container {
+  width: 100%;
+  height: 100%; }
+
+.modal-360 iframe {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+@media (max-width: 575.98px) {
+  .modal-360__block {
     padding: 50px var(--container-gutter-x) 20px var(--container-gutter-x); } }
 
 /*========== Components ==========*/
@@ -3301,10 +3325,6 @@ ol:not([class]) {
 .shops-section__item-image {
   grid-column: 1/6;
   position: relative; }
-  .shops-section__item-image::before {
-    content: '';
-    display: block;
-    padding-top: 70%; }
   .shops-section__item-image iframe {
     display: block;
     position: absolute;
