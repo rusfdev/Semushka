@@ -99,24 +99,33 @@ block content
             p В фирменных магазинах «Семушки» вы найдете не только отборные орехи, натуральные сухофрукты и сладости, но и первый в столице ореховый бар. Ваши любимые продукты и новинки, весь наш ассортимент в одном месте. 
             p В фирменных магазинах можно купить масло из любого вида орехов или семян, реализующееся в день отжима. Благодаря современным технологиям все масла «Семушки» — холодного отжима без добавок и примесей. Только экологически чистый и полезный продукт.
             p Приходите, чтобы ощутить настоящую силу природы и получить максимальную пользу для своего здоровья.
-          a(href="#").video-block.image.image_cover
+          a(href="#video" data-modal='open' data-video='https://www.youtube.com/embed/-TB7V6MCXU4?autoplay=1').video-block.image.image_cover
             img(data-src="./img/Rectangle 117.jpg", alt="image").lazyload
             .icon
               svg
                 use(xlink:href='./img/icons/sprite.svg#play')
-
+        
+        //block
         .shops-section__item 
           .shops-section__item-image 
-            a(href="#").image-360.image.image_cover 
-              img(src="./img/Rectangle 182.jpg", alt="image").lazyload
-              .icon
-                svg
-                  use(xlink:href='./img/icons/sprite.svg#360')
-
-
-
+            <iframe src="https://semushka.devgm.ru/tur/semushkaaviapark-3d/semushkaaviapark-3d.html" scrolling="no"></iframe>
           .shops-section__item-label
-
+            .invitate-element 
+              .invitate-element__text Ждем вас по адресу:
+              .h6.invitate-element__title Москва, ул. Мясницкая, 13, с. 3
+        //block
+        .shops-section__item 
+          .shops-section__item-image 
+            <iframe src="https://semushka.devgm.ru/tur/semushkamyasnitskaya-13/semushkamyasnitskaya-13.html"></iframe>
+          .shops-section__item-label
+            .invitate-element 
+              .invitate-element__text Ждем вас по адресу:
+              .h6.invitate-element__title Москва, ул. Мясницкая, 13, с. 3
+        //block
+        .shops-section__item 
+          .shops-section__item-image 
+            <iframe src="https://semushka.devgm.ru//tur/semushkavalovaya-12-3d/semushkavalovaya-12-3d.html" scrolling="no"></iframe>
+          .shops-section__item-label
             .invitate-element 
               .invitate-element__text Ждем вас по адресу:
               .h6.invitate-element__title Москва, ул. Мясницкая, 13, с. 3

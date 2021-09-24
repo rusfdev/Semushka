@@ -2437,6 +2437,21 @@
   }
   &__item-image {
     grid-column: 1/6;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 70%;
+    }
+    iframe {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+    }
   }
   &__item-label {
     grid-column: 6/13;
