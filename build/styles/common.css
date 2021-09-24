@@ -2014,7 +2014,8 @@ ol:not([class]) {
     z-index: 2;
     text-align: center;
     margin: 0;
-    font-weight: 700; }
+    font-weight: 700;
+    padding: 0 15px; }
   @media (min-width: 1024px) {
     .product-category-block__title {
       font-size: 1.25rem; } }
