@@ -58,6 +58,11 @@ mixin product-card(type)
               input(type="radio" name=index value='150')
               span(data-custom-interaction) 150
 
+            if type == 3
+              label.packaging-list__item
+                input(type="radio" name=index value='200')
+                span(data-custom-interaction) 200
+
         .product-card__last 
           .product-card__pricing 
             .product-card__old-price

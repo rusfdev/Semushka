@@ -80,3 +80,37 @@
     }
   }
 }
+
+.tag-element {
+  .checkbox {
+    padding: 0 18px;
+    margin: 0 -18px;
+    line-height: inherit;
+    &__label {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      transition: none;
+      &::before, &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.kombox-checked {
+  .tag-element {
+    color: #fff;
+    border-color: var(--color-accent-2);
+    &::before {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    &[data-touch], &[data-hover] {
+      border-color: var(--color-accent-1);
+      &::before {
+        background-color: var(--color-accent-2_2);
+      }
+    }
+  }
+}
