@@ -246,6 +246,9 @@ class ItemsSlider {
       slidesPerView: slides_count,
       centerInsufficientSlides: true,
       speed: 500,
+      grid: {
+        rows: 2,
+      },
       pagination: {
         el: this.$pagination,
         clickable: true,

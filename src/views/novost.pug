@@ -42,7 +42,9 @@ block content
             use(xlink:href='./img/icons/sprite.svg#left-arrow')
           span Вернуться назад
 
-  section.section
+  
+  
+  //section.section
     .container 
       .section__head.section__head_with-button
         h3.section__title.section__title_with-button Новости
@@ -57,3 +59,27 @@ block content
         +news-element('./img/News_pic_282x266_3 1.jpg', 'Увеличение цены на чернослив и курагу')
         +news-element('./img/News_pic_282x266_4 1.jpg', 'Компания «Семушка» прошла сертификацию FSSC 22000 ')
         +news-element('./img/News_pic_588x266_1 1.jpg', 'Логистический кризис: цены на контейнерные перевозки резко увеличились', 2)
+
+  section.section.items-slider.recipes-slider
+    .container 
+      .section__head.items-slider__head 
+        h3.section__title Другие новости
+      .swiper
+        .swiper-button.swiper-button-prev(data-custom-interaction)
+          svg.icon
+            use(xlink:href='./img/icons/sprite.svg#right-arrow')
+        .swiper-button.swiper-button-next(data-custom-interaction)
+          svg.icon
+            use(xlink:href='./img/icons/sprite.svg#right-arrow')
+        .swiper-container(data-md-slides='2' data-lg-slides='3')
+          .swiper-wrapper
+            .swiper-slide
+              +recipe-block(1, 2)
+            .swiper-slide
+              +recipe-block(2, 2)
+            .swiper-slide
+              +recipe-block(1, 2)
+            .swiper-slide
+              +recipe-block(2, 2)
+            .swiper-slide
+              +recipe-block(2, 2)

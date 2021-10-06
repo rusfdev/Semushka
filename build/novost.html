@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="./styles/common.css">
   </head>
   <body>
-    <div class="test-box" style="height: 150px;"></div>
     <div class="wrapper">
       <header class="header" data-scroll-lock-fill-gap>
         <div class="container header__container">
@@ -159,57 +158,98 @@
                 </svg><span>Вернуться назад</span></a></div>
           </div>
         </section>
-        <section class="section">
+        <!--section.section
+        .container 
+          .section__head.section__head_with-button
+            h3.section__title.section__title_with-button Новости
+            a(href="novosti.html").button.button_style-2.button_arrow
+              span Смотреть все
+              svg.icon
+                use(xlink:href='./img/icons/sprite.svg#right-arrow')
+          .news-grid 
+            +news-element('./img/News_pic_588x266 1.jpg', 'Экскурсия в магазин «Семушка»<br> на Мясницкой', 2)
+            +news-element('./img/Mask Group.jpg', 'Открытие магазина «Семушка» в Москве')
+            +news-element('./img/News_pic_282x266_2 1.jpg', 'Открытие сайта для оптовых покупателей')
+            +news-element('./img/News_pic_282x266_3 1.jpg', 'Увеличение цены на чернослив и курагу')
+            +news-element('./img/News_pic_282x266_4 1.jpg', 'Компания «Семушка» прошла сертификацию FSSC 22000 ')
+            +news-element('./img/News_pic_588x266_1 1.jpg', 'Логистический кризис: цены на контейнерные перевозки резко увеличились', 2)
+        
+        -->
+        <section class="section items-slider recipes-slider">
           <div class="container">
-            <div class="section__head section__head_with-button">
-              <h3 class="section__title section__title_with-button">Новости</h3><a class="button button_style-2 button_arrow" href="novosti.html"><span>Смотреть все</span>
+            <div class="section__head items-slider__head">
+              <h3 class="section__title">Другие новости</h3>
+            </div>
+            <div class="swiper">
+              <div class="swiper-button swiper-button-prev" data-custom-interaction>
                 <svg class="icon">
                   <use xlink:href="./img/icons/sprite.svg#right-arrow"></use>
-                </svg></a>
-            </div>
-            <div class="news-grid">
-                      <div class="news-element news-element_wide" data-custom-interaction>
-                        <div class="image image_cover"> <img class="lazyload" data-src="./img/News_pic_588x266 1.jpg" alt="image"></div>
-                        <div class="news-element__text"><span class="news-element__date">18.06.2021</span>
-                          <h6 class="news-element__title">Экскурсия в магазин «Семушка»<br> на Мясницкой</h6>
-                        </div>
-                        <div class="news-element__button"><a class="button button_style-4 button_small" href="#"> <span>Читать</span></a></div>
-                      </div>
-                      <div class="news-element" data-custom-interaction>
-                        <div class="image image_cover"> <img class="lazyload" data-src="./img/Mask Group.jpg" alt="image"></div>
-                        <div class="news-element__text"><span class="news-element__date">18.06.2021</span>
-                          <h6 class="news-element__title">Открытие магазина «Семушка» в Москве</h6>
-                        </div>
-                        <div class="news-element__button"><a class="button button_style-4 button_small" href="#"> <span>Читать</span></a></div>
-                      </div>
-                      <div class="news-element" data-custom-interaction>
-                        <div class="image image_cover"> <img class="lazyload" data-src="./img/News_pic_282x266_2 1.jpg" alt="image"></div>
-                        <div class="news-element__text"><span class="news-element__date">18.06.2021</span>
-                          <h6 class="news-element__title">Открытие сайта для оптовых покупателей</h6>
-                        </div>
-                        <div class="news-element__button"><a class="button button_style-4 button_small" href="#"> <span>Читать</span></a></div>
-                      </div>
-                      <div class="news-element" data-custom-interaction>
-                        <div class="image image_cover"> <img class="lazyload" data-src="./img/News_pic_282x266_3 1.jpg" alt="image"></div>
-                        <div class="news-element__text"><span class="news-element__date">18.06.2021</span>
-                          <h6 class="news-element__title">Увеличение цены на чернослив и курагу</h6>
-                        </div>
-                        <div class="news-element__button"><a class="button button_style-4 button_small" href="#"> <span>Читать</span></a></div>
-                      </div>
-                      <div class="news-element" data-custom-interaction>
-                        <div class="image image_cover"> <img class="lazyload" data-src="./img/News_pic_282x266_4 1.jpg" alt="image"></div>
-                        <div class="news-element__text"><span class="news-element__date">18.06.2021</span>
-                          <h6 class="news-element__title">Компания «Семушка» прошла сертификацию FSSC 22000 </h6>
-                        </div>
-                        <div class="news-element__button"><a class="button button_style-4 button_small" href="#"> <span>Читать</span></a></div>
-                      </div>
-                      <div class="news-element news-element_wide" data-custom-interaction>
-                        <div class="image image_cover"> <img class="lazyload" data-src="./img/News_pic_588x266_1 1.jpg" alt="image"></div>
-                        <div class="news-element__text"><span class="news-element__date">18.06.2021</span>
-                          <h6 class="news-element__title">Логистический кризис: цены на контейнерные перевозки резко увеличились</h6>
-                        </div>
-                        <div class="news-element__button"><a class="button button_style-4 button_small" href="#"> <span>Читать</span></a></div>
-                      </div>
+                </svg>
+              </div>
+              <div class="swiper-button swiper-button-next" data-custom-interaction>
+                <svg class="icon">
+                  <use xlink:href="./img/icons/sprite.svg#right-arrow"></use>
+                </svg>
+              </div>
+              <div class="swiper-container" data-md-slides="2" data-lg-slides="3">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a class="recipe-block" href="#">
+                              <div class="recipe-block__mask"></div>
+                              <div class="recipe-block__image">
+                                <div class="image image_cover"><img class="lazyload" data-src="./img/recipe1.jpg" alt="image">
+                                </div>
+                              </div>
+                              <div class="recipe-block__text">
+                                <div class="recipe-block__title"> Салат с киноа, авокадо и шампиньонами
+                                </div>
+                              </div></a>
+                  </div>
+                  <div class="swiper-slide"><a class="recipe-block" href="#">
+                              <div class="recipe-block__mask"></div>
+                              <div class="recipe-block__image">
+                                <div class="image image_cover"><img class="lazyload" data-src="./img/recipe2.jpg" alt="image">
+                                </div>
+                              </div>
+                              <div class="recipe-block__text">
+                                <div class="recipe-block__title"> Карамелизованная морковь с кешью кремом
+                                </div>
+                              </div></a>
+                  </div>
+                  <div class="swiper-slide"><a class="recipe-block" href="#">
+                              <div class="recipe-block__mask"></div>
+                              <div class="recipe-block__image">
+                                <div class="image image_cover"><img class="lazyload" data-src="./img/recipe1.jpg" alt="image">
+                                </div>
+                              </div>
+                              <div class="recipe-block__text">
+                                <div class="recipe-block__title"> Салат с киноа, авокадо и шампиньонами
+                                </div>
+                              </div></a>
+                  </div>
+                  <div class="swiper-slide"><a class="recipe-block" href="#">
+                              <div class="recipe-block__mask"></div>
+                              <div class="recipe-block__image">
+                                <div class="image image_cover"><img class="lazyload" data-src="./img/recipe2.jpg" alt="image">
+                                </div>
+                              </div>
+                              <div class="recipe-block__text">
+                                <div class="recipe-block__title"> Карамелизованная морковь с кешью кремом
+                                </div>
+                              </div></a>
+                  </div>
+                  <div class="swiper-slide"><a class="recipe-block" href="#">
+                              <div class="recipe-block__mask"></div>
+                              <div class="recipe-block__image">
+                                <div class="image image_cover"><img class="lazyload" data-src="./img/recipe2.jpg" alt="image">
+                                </div>
+                              </div>
+                              <div class="recipe-block__text">
+                                <div class="recipe-block__title"> Карамелизованная морковь с кешью кремом
+                                </div>
+                              </div></a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -326,8 +366,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="837720">
-                      <label class="checkbox__label" for="837720">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="320532">
+                      <label class="checkbox__label" for="320532">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -386,8 +426,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="478930">
-                      <label class="checkbox__label" for="478930">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="708478">
+                      <label class="checkbox__label" for="708478">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -418,8 +458,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="945271">
-                      <label class="checkbox__label" for="945271">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="141701">
+                      <label class="checkbox__label" for="141701">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -449,8 +489,8 @@
               </label>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="986585">
-                      <label class="checkbox__label" for="986585">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="195630">
+                      <label class="checkbox__label" for="195630">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit form__buttons">
@@ -502,8 +542,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="165897">
-                      <label class="checkbox__label" for="165897">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="737224">
+                      <label class="checkbox__label" for="737224">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit">
