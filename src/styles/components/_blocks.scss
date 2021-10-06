@@ -1352,6 +1352,7 @@
     font-size: 16px;
     line-height: 20px;
     user-select: none;
+    transition: color $trs1;
     .icon {
       position: absolute;
       width: 14px;
@@ -1359,6 +1360,9 @@
       right: var(--gutter);
       top: 14px;
       transform: rotate(-90deg);
+      color: var(--color-accent-1);
+    }
+    &[data-touch], &[data-hover] {
       color: var(--color-accent-1);
     }
     &.is-active {
@@ -1516,6 +1520,20 @@
   &__date {
     font-size: 1.25rem;
   }
+  @include media-breakpoint-up(md) {
+    &__content {
+      &::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      .video-block {
+        float: right;
+        width: 50%;
+        margin: 0 0 0 20px;
+      }
+    }
+  }
   @include media-breakpoint-down(lg) {
     &__head {
       padding: 60px 40px;
@@ -1529,6 +1547,15 @@
     }
     &__date {
       font-size: 1.125rem;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__content {
+      .video-block {
+        &:not(:last-child) {
+          margin-bottom: 1.75rem;
+        }
+      }
     }
   }
   @include media-breakpoint-down(sm) {
@@ -2022,6 +2049,7 @@
     position: relative;
     z-index: 2;
     pointer-events: none;
+    padding-bottom: 50px;
   }
   &__content {
     grid-column: span 6;
@@ -2037,6 +2065,14 @@
     top: 0;
     left: 0;
     border: 0;
+    iframe {
+      border: 0 !important;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
   }
   &__title {
     font-weight: 700;
@@ -2093,7 +2129,6 @@
     }
     &__elements {
       height: auto;
-      max-height: 300px;
     }
   }
   @include media-breakpoint-down(sm) {
@@ -2451,13 +2486,14 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: var(--grid-gutter-x);
+    align-items: center;
     &:not(:last-child) {
       margin-bottom: 60px;
     }
   }
   &__item-image {
-    grid-column: 1/6;
     position: relative;
+    grid-column: span 5;
     iframe {
       display: block;
       position: absolute;
@@ -2468,11 +2504,42 @@
       border: none;
     }
   }
-  &__item-label {
-    grid-column: 6/13;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @include media-breakpoint-up(lg) {
+    &__item {
+      &:nth-child(odd) {
+        & > div {
+          &:first-child {
+            grid-column: 1/6;
+          }
+          &:last-child {
+            grid-column: 8/13;
+          }
+        }
+      }
+      &:nth-child(even) {
+        & > div {
+          &:last-child {
+            grid-column: 2/7;
+          }
+          &:first-child {
+            grid-column: 8/13;
+            order: 2;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-between(md, lg) {
+    &__item {
+      &:nth-child(odd) {
+        .shops-section__item-image {
+          order: 2;
+        }
+      }
+    }
+    &__item-image, &__item-label {
+      grid-column: span 6;
+    }
   }
   @include media-breakpoint-down(lg) {
     &__top {
@@ -2482,34 +2549,31 @@
     &__top-text {
       order: 2;
     }
-    &__item-image {
-      grid-column: 1/7;
+  }
+  @include media-breakpoint-down(md) {
+    &__item {
+      display: block;
     }
-    &__item-label {
-      grid-column: 7/13;
+    &__item-image {
+      margin-bottom: 30px;
     }
   }
   @include media-breakpoint-down(sm) {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
     &__top {
       margin-bottom: 50px;
     }
-    &__item {
-      row-gap: 40px;
-    }
     &__item-image {
-      grid-column: 1/13;
-    }
-    &__item-label {
-      grid-column: 1/13;
+      margin-bottom: 20px;
     }
   }
 }
 
 .invitate-element {
-  border: 2px solid var(--color-accent-1);
-  border-radius: 4px;
-  padding: 40px 70px;
-  max-width: 420px;
   &__text {
     margin-bottom: 20px;
   }
@@ -2517,15 +2581,15 @@
     color: var(--color-accent-1);
     margin: 0;
   }
-  @include media-breakpoint-down(lg) {
-    padding: 40px;
-  }
   @include media-breakpoint-down(md) {
-    padding: 30px 20px;
+    &__text {
+      margin-bottom: 15px;
+    }
   }
   @include media-breakpoint-down(sm) {
-    padding: 30px 20px;
-    width: 100%;
+    &__text {
+      margin-bottom: 10px;
+    }
   }
 }
 

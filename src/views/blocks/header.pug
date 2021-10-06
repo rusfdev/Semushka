@@ -15,11 +15,9 @@ header.header(data-scroll-lock-fill-gap)
               | Каталог
           li.header-nav__item 
             a(href="./blog.html").header-nav__link.link Блог
-          li.header-nav__item 
-            a(href="./novosti.html").header-nav__link.link Новости
     
     .header__right
-      a(href="https://ruslanmmr.github.io/Semushka_opt/build/").button.button_style-3.header__large-button
+      a(href="https://ruslanmmr.github.io/Semushka_opt/build/").link.header__large-button
         svg.icon
           use(xlink:href='./img/icons/sprite.svg#box')
         span Оптовикам
@@ -73,16 +71,19 @@ nav.mobile-navigation
         li.mobile-nav-list__item 
           a(href="./o-kompanii.html").mobile-nav-list__link.link О компании
         li.mobile-nav-list__item  
-          a(href="./katalog.html").mobile-nav-list__link.link Каталог
+          a(href="./katalog.html").mobile-nav-list__link.link 
+            svg.icon
+              use(xlink:href='./img/icons/sprite.svg#shopping-bag')
+            | Каталог
         li.mobile-nav-list__item 
           a(href="./blog.html").mobile-nav-list__link.link Блог
         li.mobile-nav-list__item 
           a(href="./novosti.html").mobile-nav-list__link.link Новости
 
       .mobile-navigation__bottom 
-        //.mobile-navigation__phone
-          a(href="tel:74991103044").link +7 (499) 110 30 44
-        a(href="#zapros-prajs-lista" data-modal='open').button.button_style-3
-          svg.icon
-            use(xlink:href='./img/icons/sprite.svg#box')
-          span Оптовикам
+        .mobile-navigation__bottom-item 
+          h6.mobile-navigation__bottom-item-title Телефон
+          a(href="tel:74954887285").link +7 495 488 72 85
+        .mobile-navigation__bottom-item 
+          h6.mobile-navigation__bottom-item-title Почта
+          a(href="mailto:info@semushka-m.ru").link info@semushka-m.ru

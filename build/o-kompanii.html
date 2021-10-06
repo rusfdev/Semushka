@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Семушка — О компании</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=360, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Крупнейший российский производитель и оптовый поставщик натуральных продуктов - орехов и сухофруктов.">
     <!--color-->
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./styles/common.css">
   </head>
   <body>
+    <div class="test-box" style="height: 150px;"></div>
     <div class="wrapper">
       <header class="header" data-scroll-lock-fill-gap>
         <div class="container header__container">
@@ -39,11 +40,10 @@
                       <use xlink:href="./img/icons/sprite.svg#shopping-bag"></use>
                     </svg>Каталог</a></li>
                 <li class="header-nav__item"> <a class="header-nav__link link" href="./blog.html">Блог</a></li>
-                <li class="header-nav__item"> <a class="header-nav__link link" href="./novosti.html">Новости</a></li>
               </ul>
             </nav>
           </div>
-          <div class="header__right"><a class="button button_style-3 header__large-button" href="https://ruslanmmr.github.io/Semushka_opt/build/">
+          <div class="header__right"><a class="link header__large-button" href="https://ruslanmmr.github.io/Semushka_opt/build/">
               <svg class="icon">
                 <use xlink:href="./img/icons/sprite.svg#box"></use>
               </svg><span>Оптовикам</span></a>
@@ -92,16 +92,20 @@
           <div class="mobile-navigation__container" data-scroll-lock-scrollable>
             <ul class="mobile-nav-list">
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./o-kompanii.html">О компании</a></li>
-              <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./katalog.html">Каталог</a></li>
+              <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./katalog.html">
+                  <svg class="icon">
+                    <use xlink:href="./img/icons/sprite.svg#shopping-bag"></use>
+                  </svg>Каталог</a></li>
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./blog.html">Блог</a></li>
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./novosti.html">Новости</a></li>
             </ul>
             <div class="mobile-navigation__bottom">
-              <!--.mobile-navigation__phonea(href="tel:74991103044").link +7 (499) 110 30 44
-              --><a class="button button_style-3" href="#zapros-prajs-lista" data-modal="open">
-                <svg class="icon">
-                  <use xlink:href="./img/icons/sprite.svg#box"></use>
-                </svg><span>Оптовикам</span></a>
+              <div class="mobile-navigation__bottom-item">
+                <h6 class="mobile-navigation__bottom-item-title">Телефон</h6><a class="link" href="tel:74954887285">+7 495 488-72-85</a>
+              </div>
+              <div class="mobile-navigation__bottom-item">
+                <h6 class="mobile-navigation__bottom-item-title">Почта</h6><a class="link" href="mailto:info@semushka-m.ru">info@semushka-m.ru</a>
+              </div>
             </div>
           </div>
         </div>
@@ -238,45 +242,47 @@
                     </svg>
                   </div></a>
               </div>
-              <div class="shops-section__item">
-                <div class="shops-section__item-image"> <a class="image-360 image image_cover" href="#pano360" data-modal="open" data-video="https://semushka.devgm.ru/tur/semushkaaviapark-3d/semushkaaviapark-3d.html"> <img class="lazyload" src="./img/Rectangle 182.jpg" alt="image">
-                    <div class="icon">
-                      <svg>
-                        <use xlink:href="./img/icons/sprite.svg#360"></use>
-                      </svg>
-                    </div></a></div>
-                <div class="shops-section__item-label">
-                  <div class="invitate-element">
-                    <div class="invitate-element__text">Ждем вас по адресу:</div>
-                    <div class="h6 invitate-element__title">Москва, ул. Мясницкая, 13, с. 3</div>
+              <div class="shops-section__items">
+                <div class="shops-section__item">
+                  <div class="shops-section__item-image"> <a class="image-360 image image_cover" href="#pano360" data-modal="open" data-video="https://semushka.devgm.ru/tur/semushkaaviapark-3d/semushkaaviapark-3d.html"> <img class="lazyload" src="./img/Rectangle 182.jpg" alt="image">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="./img/icons/sprite.svg#360"></use>
+                        </svg>
+                      </div></a></div>
+                  <div class="shops-section__item-label">
+                    <div class="invitate-element">
+                      <div class="invitate-element__text">Ждем вас по адресу:</div>
+                      <div class="h6 invitate-element__title">Москва, ул. Мясницкая, 13, с. 3</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="shops-section__item">
-                <div class="shops-section__item-image"> <a class="image-360 image image_cover" href="#pano360" data-modal="open" data-video="https://semushka.devgm.ru/tur/semushkamyasnitskaya-13/semushkamyasnitskaya-13.html"> <img class="lazyload" src="./img/Rectangle 182.jpg" alt="image">
-                    <div class="icon">
-                      <svg>
-                        <use xlink:href="./img/icons/sprite.svg#360"></use>
-                      </svg>
-                    </div></a></div>
-                <div class="shops-section__item-label">
-                  <div class="invitate-element">
-                    <div class="invitate-element__text">Ждем вас по адресу:</div>
-                    <div class="h6 invitate-element__title">Москва, ул. Мясницкая, 13, с. 3</div>
+                <div class="shops-section__item">
+                  <div class="shops-section__item-image"> <a class="image-360 image image_cover" href="#pano360" data-modal="open" data-video="https://semushka.devgm.ru/tur/semushkamyasnitskaya-13/semushkamyasnitskaya-13.html"> <img class="lazyload" src="./img/Rectangle 182.jpg" alt="image">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="./img/icons/sprite.svg#360"></use>
+                        </svg>
+                      </div></a></div>
+                  <div class="shops-section__item-label">
+                    <div class="invitate-element">
+                      <div class="invitate-element__text">Ждем вас по адресу:</div>
+                      <div class="h6 invitate-element__title">Москва, ул. Мясницкая, 13, с. 3</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="shops-section__item">
-                <div class="shops-section__item-image"> <a class="image-360 image image_cover" href="#pano360" data-modal="open" data-video="https://semushka.devgm.ru//tur/semushkavalovaya-12-3d/semushkavalovaya-12-3d.html"> <img class="lazyload" src="./img/Rectangle 182.jpg" alt="image">
-                    <div class="icon">
-                      <svg>
-                        <use xlink:href="./img/icons/sprite.svg#360"></use>
-                      </svg>
-                    </div></a></div>
-                <div class="shops-section__item-label">
-                  <div class="invitate-element">
-                    <div class="invitate-element__text">Ждем вас по адресу:</div>
-                    <div class="h6 invitate-element__title">Москва, ул. Мясницкая, 13, с. 3</div>
+                <div class="shops-section__item">
+                  <div class="shops-section__item-image"> <a class="image-360 image image_cover" href="#pano360" data-modal="open" data-video="https://semushka.devgm.ru//tur/semushkavalovaya-12-3d/semushkavalovaya-12-3d.html"> <img class="lazyload" src="./img/Rectangle 182.jpg" alt="image">
+                      <div class="icon">
+                        <svg>
+                          <use xlink:href="./img/icons/sprite.svg#360"></use>
+                        </svg>
+                      </div></a></div>
+                  <div class="shops-section__item-label">
+                    <div class="invitate-element">
+                      <div class="invitate-element__text">Ждем вас по адресу:</div>
+                      <div class="h6 invitate-element__title">Москва, ул. Мясницкая, 13, с. 3</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -396,8 +402,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="338869">
-                      <label class="checkbox__label" for="338869">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="838394">
+                      <label class="checkbox__label" for="838394">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -456,8 +462,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="417153">
-                      <label class="checkbox__label" for="417153">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="186126">
+                      <label class="checkbox__label" for="186126">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -488,8 +494,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="135337">
-                      <label class="checkbox__label" for="135337">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="597123">
+                      <label class="checkbox__label" for="597123">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -519,8 +525,8 @@
               </label>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="568094">
-                      <label class="checkbox__label" for="568094">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="448153">
+                      <label class="checkbox__label" for="448153">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit form__buttons">
@@ -572,8 +578,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="56331">
-                      <label class="checkbox__label" for="56331">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="889847">
+                      <label class="checkbox__label" for="889847">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit">

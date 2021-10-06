@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Семушка — Экскурсия в магазин «Семушка» на Мясницкой</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=360, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Крупнейший российский производитель и оптовый поставщик натуральных продуктов - орехов и сухофруктов.">
     <!--color-->
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./styles/common.css">
   </head>
   <body>
+    <div class="test-box" style="height: 150px;"></div>
     <div class="wrapper">
       <header class="header" data-scroll-lock-fill-gap>
         <div class="container header__container">
@@ -39,11 +40,10 @@
                       <use xlink:href="./img/icons/sprite.svg#shopping-bag"></use>
                     </svg>Каталог</a></li>
                 <li class="header-nav__item"> <a class="header-nav__link link" href="./blog.html">Блог</a></li>
-                <li class="header-nav__item"> <a class="header-nav__link link" href="./novosti.html">Новости</a></li>
               </ul>
             </nav>
           </div>
-          <div class="header__right"><a class="button button_style-3 header__large-button" href="https://ruslanmmr.github.io/Semushka_opt/build/">
+          <div class="header__right"><a class="link header__large-button" href="https://ruslanmmr.github.io/Semushka_opt/build/">
               <svg class="icon">
                 <use xlink:href="./img/icons/sprite.svg#box"></use>
               </svg><span>Оптовикам</span></a>
@@ -92,16 +92,20 @@
           <div class="mobile-navigation__container" data-scroll-lock-scrollable>
             <ul class="mobile-nav-list">
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./o-kompanii.html">О компании</a></li>
-              <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./katalog.html">Каталог</a></li>
+              <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./katalog.html">
+                  <svg class="icon">
+                    <use xlink:href="./img/icons/sprite.svg#shopping-bag"></use>
+                  </svg>Каталог</a></li>
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./blog.html">Блог</a></li>
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./novosti.html">Новости</a></li>
             </ul>
             <div class="mobile-navigation__bottom">
-              <!--.mobile-navigation__phonea(href="tel:74991103044").link +7 (499) 110 30 44
-              --><a class="button button_style-3" href="#zapros-prajs-lista" data-modal="open">
-                <svg class="icon">
-                  <use xlink:href="./img/icons/sprite.svg#box"></use>
-                </svg><span>Оптовикам</span></a>
+              <div class="mobile-navigation__bottom-item">
+                <h6 class="mobile-navigation__bottom-item-title">Телефон</h6><a class="link" href="tel:74954887285">+7 495 488-72-85</a>
+              </div>
+              <div class="mobile-navigation__bottom-item">
+                <h6 class="mobile-navigation__bottom-item-title">Почта</h6><a class="link" href="mailto:info@semushka-m.ru">info@semushka-m.ru</a>
+              </div>
             </div>
           </div>
         </div>
@@ -134,16 +138,19 @@
                 </div>
               </div>
               <div class="article__content">
-                <p>В 2017 году в целях расширения производственных и складских площадей, а также оптимизации логистических процессов, производство «Семушки» переехало на новую площадку, расположенную в деревне Новосельцево Мытищинского района Подмосковья. Суммарная площадь производства составляет около 6 тыс. кв. метров. Количество сотрудников составляет 120 человек, автопарк состоит из 20 грузовых и полу-грузовых автомашин. Производственное оборудование включает современные автоматизированные фасовочные линии.</p>
-                <p>Натуральные фрукты — отборные, впитавшие всю силу солнца. Вкусные, сладкие ягоды. Орехи, способные напитать организм чистой энергией, витаминами и минералами. В наших магазинах вас ждут: ⁣⁣⠀</p>
+                <p>В нашем магазине вы найдёте не только отборные орехи, натуральные сухофрукты и сладости, но и первый в столице Ореховый бар.</p><a class="video-block image image_cover" href="#video" data-modal="open" data-video="https://www.youtube.com/embed/-TB7V6MCXU4?autoplay=1"><img class="lazyload" data-src="./img/Rectangle 117.jpg" alt="image">
+                  <div class="icon">
+                    <svg>
+                      <use xlink:href="./img/icons/sprite.svg#play"></use>
+                    </svg>
+                  </div></a>
                 <ul>
-                  <li>Отборные орехи и сухофрукты на развес</li>
-                  <li>Только лучшие калиброванные орехи высшего сорта</li>
-                  <li>Ваши любимые продукты и новинки, весь ассортимент в одном месте</li>
-                  <li>Первый в столице ореховый бар: ореховые масла можно приобрести прямо в день отжима</li>
-                  <li>Акции и специальные предложения месяца, подарки при покупке и дегустации</li>
+                  <li>Масло из любого вида орехов или семян можно купить прямо в день отжима.</li>
+                  <li>Современные технологии позволяют получить масла холодного отжима без добавок и примесей. ⁣⁣</li>
+                  <li>Только экологически чистый и полезный продукт.⁣⁣</li>
                 </ul>
-                <p>Натуральные фрукты — отборные, впитавшие всю силу солнца. Вкусные, сладкие ягоды. Орехи, способные напитать организм чистой энергией, витаминами и минералами. Приходите, чтобы составить свою витаминную корзину.</p>
+                <p>Приходите, чтобы ощутить настоящую силу природы и получить максимальную пользу для своего здоровья и здоровья своих близких с продукцией </p>
+                <p>Ждем Вас по адресу: <br> Москва, Большая Серпуховская ул., дом 32, строение 1</p>
               </div>
             </div>
             <div class="back-link"> <a href="novosti.html">
@@ -319,8 +326,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="201709">
-                      <label class="checkbox__label" for="201709">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="837720">
+                      <label class="checkbox__label" for="837720">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -379,8 +386,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="872512">
-                      <label class="checkbox__label" for="872512">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="478930">
+                      <label class="checkbox__label" for="478930">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -411,8 +418,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="27893">
-                      <label class="checkbox__label" for="27893">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="945271">
+                      <label class="checkbox__label" for="945271">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -442,8 +449,8 @@
               </label>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="701618">
-                      <label class="checkbox__label" for="701618">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="986585">
+                      <label class="checkbox__label" for="986585">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit form__buttons">
@@ -495,8 +502,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="711570">
-                      <label class="checkbox__label" for="711570">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="165897">
+                      <label class="checkbox__label" for="165897">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit">

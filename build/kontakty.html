@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Семушка — Контакты</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=360, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Крупнейший российский производитель и оптовый поставщик натуральных продуктов - орехов и сухофруктов.">
     <!--color-->
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./styles/common.css">
   </head>
   <body>
+    <div class="test-box" style="height: 150px;"></div>
     <div class="wrapper">
       <header class="header" data-scroll-lock-fill-gap>
         <div class="container header__container">
@@ -39,11 +40,10 @@
                       <use xlink:href="./img/icons/sprite.svg#shopping-bag"></use>
                     </svg>Каталог</a></li>
                 <li class="header-nav__item"> <a class="header-nav__link link" href="./blog.html">Блог</a></li>
-                <li class="header-nav__item"> <a class="header-nav__link link" href="./novosti.html">Новости</a></li>
               </ul>
             </nav>
           </div>
-          <div class="header__right"><a class="button button_style-3 header__large-button" href="https://ruslanmmr.github.io/Semushka_opt/build/">
+          <div class="header__right"><a class="link header__large-button" href="https://ruslanmmr.github.io/Semushka_opt/build/">
               <svg class="icon">
                 <use xlink:href="./img/icons/sprite.svg#box"></use>
               </svg><span>Оптовикам</span></a>
@@ -92,16 +92,20 @@
           <div class="mobile-navigation__container" data-scroll-lock-scrollable>
             <ul class="mobile-nav-list">
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./o-kompanii.html">О компании</a></li>
-              <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./katalog.html">Каталог</a></li>
+              <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./katalog.html">
+                  <svg class="icon">
+                    <use xlink:href="./img/icons/sprite.svg#shopping-bag"></use>
+                  </svg>Каталог</a></li>
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./blog.html">Блог</a></li>
               <li class="mobile-nav-list__item"> <a class="mobile-nav-list__link link" href="./novosti.html">Новости</a></li>
             </ul>
             <div class="mobile-navigation__bottom">
-              <!--.mobile-navigation__phonea(href="tel:74991103044").link +7 (499) 110 30 44
-              --><a class="button button_style-3" href="#zapros-prajs-lista" data-modal="open">
-                <svg class="icon">
-                  <use xlink:href="./img/icons/sprite.svg#box"></use>
-                </svg><span>Оптовикам</span></a>
+              <div class="mobile-navigation__bottom-item">
+                <h6 class="mobile-navigation__bottom-item-title">Телефон</h6><a class="link" href="tel:74954887285">+7 495 488-72-85</a>
+              </div>
+              <div class="mobile-navigation__bottom-item">
+                <h6 class="mobile-navigation__bottom-item-title">Почта</h6><a class="link" href="mailto:info@semushka-m.ru">info@semushka-m.ru</a>
+              </div>
             </div>
           </div>
         </div>
@@ -143,19 +147,14 @@
                     <div class="map-section__element-title">Глобус. ш. Энтузиастов, 48, Балашиха</div>
                     <div class="map-section__element-time">Круглосуточно</div>
                   </div>
-                  <div class="map-section__element">
-                    <div class="map-section__element-type">Гипермаркет</div>
-                    <div class="map-section__element-title">Глобус. ш. Энтузиастов, 48, Балашиха</div>
-                    <div class="map-section__element-time">Круглосуточно</div>
-                  </div>
-                  <div class="map-section__element">
-                    <div class="map-section__element-type">Гипермаркет</div>
-                    <div class="map-section__element-title">Глобус. ш. Энтузиастов, 48, Балашиха</div>
-                    <div class="map-section__element-time">Круглосуточно</div>
-                  </div>
                 </div>
               </div>
-            </div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d577336.7645875042!2d36.82512011568039!3d55.58074803516603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2z0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sua!4v1627325316065!5m2!1sru!2sua" loading="lazy" class="map-section__map"></iframe>
+            </div>
+            <div class="map-section__map"><a class="dg-widget-link" href="http://2gis.ru/moscow/profiles/70000001047778869,4504127909024155,70000001054919046/center/37.58422851562501,55.783716771543766/zoom/12?utm_medium=widget-source&amp;utm_campaign=firmsonmap&amp;utm_source=bigMap">Посмотреть на карте Москвы</a>
+              <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+              <script charset="utf-8">new DGWidgetLoader({"width":600,"height":600,"borderColor":"#a3a3a3","pos":{"lat":55.783716771543766,"lon":37.58422851562501,"zoom":12},"opt":{"city":"moscow"},"org":[{"id":"70000001047778869"},{"id":"4504127909024155"},{"id":"70000001054919046"}]});</script>
+              <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+            </div>
           </div>
         </section>
         <section class="section contacts-section">
@@ -331,8 +330,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="305761">
-                      <label class="checkbox__label" for="305761">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="819058">
+                      <label class="checkbox__label" for="819058">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -391,8 +390,8 @@
               </div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="476059">
-                      <label class="checkbox__label" for="476059">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="758518">
+                      <label class="checkbox__label" for="758518">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -423,8 +422,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="970369">
-                      <label class="checkbox__label" for="970369">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
+                      <input class="checkbox__input" type="checkbox" id="726942">
+                      <label class="checkbox__label" for="726942">Я прочитал и принимаю <a class="link-dashed">политику конфинденциальности</a> согласен на сбор и обработку моих персональных данных</label>
                     </div>
               </div>
               <div class="form__submit">
@@ -454,8 +453,8 @@
               </label>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="443894">
-                      <label class="checkbox__label" for="443894">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="806653">
+                      <label class="checkbox__label" for="806653">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit form__buttons">
@@ -507,8 +506,8 @@
               <div class="form__element"><span class="form__required-message">*поле обязательно для заполнения</span></div>
               <div class="form__checkbox">
                     <div class="checkbox">
-                      <input class="checkbox__input" type="checkbox" id="599611">
-                      <label class="checkbox__label" for="599611">Запомнить логин и пароль</label>
+                      <input class="checkbox__input" type="checkbox" id="936671">
+                      <label class="checkbox__label" for="936671">Запомнить логин и пароль</label>
                     </div>
               </div>
               <div class="form__submit">

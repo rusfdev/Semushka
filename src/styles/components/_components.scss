@@ -115,6 +115,13 @@ img {
   &-wrapper {
     transition-timing-function: ease;
   }
+  &-container {
+    opacity: 0;
+    transition: opacity $trs1;
+    &-initialized {
+      opacity: 1;
+    }
+  }
   &-slide {
     height: initial;
   }

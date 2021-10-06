@@ -15,9 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
   CustomInteractionEvents.init();
   Modal.init();
   Nav.init();
+  Header.init();
 
-  //calculator();
-  //buy_box();
+  calculator();
+  buy_box();
   input_file();
   header_search();
 
@@ -142,7 +143,42 @@ const CustomInteractionEvents = Object.create({
     document.addEventListener('contextmenu', this.events);
   }
 })
+function calculator() {
 
+  let events = (event) => {
+    let $target = event.target.closest('.count-calculator__button');
+
+    if($target) {
+      let $input = $target.parentNode.querySelector('input');
+
+      if($target.classList.contains('count-calculator__button_minus')) {
+        
+        //
+        //if(+$input.value <= 1) {
+         // let $parent = $target.closest('.buy-box');
+         // $parent.classList.remove('is-active');
+        //}
+
+
+        $input.value = Math.max(+$input.value - 1, 1);
+      
+      } else {
+        $input.value = +$input.value + 1;
+      }
+    }
+  }
+
+  let input = (event) => {
+    let $target = event.target.closest('.count-calculator__input');
+
+    if($target) {
+      $target.value = Math.max(+$target.value, 1)
+    }
+  }
+
+  document.addEventListener('click', events);
+  document.addEventListener('input', input);
+}
 function header_search() {
   let $open = document.querySelector('.header__search-open-button'),
       $close = document.querySelector('.header__search-close-button'),
@@ -380,6 +416,8 @@ class ProductPreviewSlider {
     this.slider = new Swiper(this.$slider, {
       touchStartPreventDefault: false,
       slidesPerView: 1,
+      observer: true,
+      observeParents: true,
       speed: 500,
       lazy: {
         loadOnTransitionStart: true,
@@ -622,5 +660,23 @@ class ParallaxProductSlider {
       document.addEventListener('mousemove', this.mousemove);
       this.checkPosition();
     }
+  }
+}
+
+const Header = {
+  $element: document.querySelector('.header'),
+
+  init: function () {
+
+    let check = () => {
+      let y = $wrapper.getBoundingClientRect().y,
+          fixed = this.$element.classList.contains('header_fixed');
+
+      if (y <= 0 && !fixed) this.$element.classList.add('header_fixed');
+      else if (y > 0 && fixed) this.$element.classList.remove('header_fixed');
+    }
+
+    window.addEventListener('scroll', check)
+    check();
   }
 }
