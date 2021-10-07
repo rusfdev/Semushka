@@ -1982,6 +1982,7 @@
   }
   &__info-content {
     display: grid;
+    align-items: flex-start;
     grid-template-columns: 1fr 1fr;
     column-gap: var(--grid-gutter-x);
     row-gap: 20px;
@@ -2624,6 +2625,58 @@
     .icon {
       transform: scale(1.15);
       color: var(--color-accent-2_2);
+    }
+  }
+}
+
+.partners-box {
+  padding: 40px;
+  box-shadow: var(--block-shadow);
+  &__container {
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1px;
+  }
+  &__item {
+    position: relative;
+    &::after, &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: #E1E1E1;
+    }
+    &::after {
+      width: 1px;
+      height: calc(300% + 2px);
+      left: 100%;
+      top: calc(-100% - 1px);
+    }
+    &::before {
+      width: calc(300% + 2px);
+      height: 1px;
+      top: 100%;
+      left: calc(-100% - 1px);
+    }
+    .image {
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 71.4%;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &__container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 20px;
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
