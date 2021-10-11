@@ -616,7 +616,7 @@
     }
   }
   &__image {
-    flex: 0 0 150px;
+    flex: 0 0 170px;
     position: relative;
     z-index: 2;
     .image {
@@ -626,7 +626,7 @@
       top: 0;
       left: 0;
       img {
-        padding: 20px 20px 5px 20px;
+        padding: 10px 5px 0 5px;
       }
     }
   }
@@ -638,7 +638,7 @@
   }
   &__content {
     flex: 1 1 auto;
-    padding: 15px 10px 25px 10px;
+    padding: 10px 10px 25px 10px;
     position: relative;
     z-index: 2;
     display: flex;
@@ -752,6 +752,22 @@
     &__old-price {
       margin: 0 0 1px 10px;
       order: 2;
+    }
+    &__image {
+      flex: 0 0 auto;
+      .image {
+        position: initial;
+        width: initial;
+        height: initial;
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 100%;
+        }
+      }
+    }
+    &__content {
+      padding-top: 10px;
     }
   }
   @media screen and (max-width:359px) {
