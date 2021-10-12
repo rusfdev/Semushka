@@ -2123,6 +2123,10 @@
     font-weight: 700;
     color: var(--color-accent-1);
     margin-bottom: 2px;
+    transition: color $trs1;
+    &[data-touch], &[data-hover] {
+      color: var(--color-accent-1_2);
+    }
   }
   &__section-title {
     padding-left: var(--px);

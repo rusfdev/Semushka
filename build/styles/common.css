@@ -3078,7 +3078,10 @@ ol:not([class]) {
   .map-section__element-title {
     font-weight: 700;
     color: var(--color-accent-1);
-    margin-bottom: 2px; }
+    margin-bottom: 2px;
+    transition: color 0.15s ease-in-out; }
+    .map-section__element-title[data-touch], .map-section__element-title[data-hover] {
+      color: var(--color-accent-1_2); }
   .map-section__section-title {
     padding-left: var(--px); }
   @media (max-width: 767.98px) {
