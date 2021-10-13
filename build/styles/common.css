@@ -1897,7 +1897,7 @@ ol:not([class]) {
   .product-card[data-hover] .product-labels-list {
     transform: translate(-5px, -5px); }
   .product-card__image {
-    flex: 0 0 170px;
+    flex: 0 0 220px;
     position: relative;
     z-index: 2; }
     .product-card__image .image {
@@ -2011,8 +2011,8 @@ ol:not([class]) {
       flex: 0 0 auto; }
       .product-card__image .image {
         position: initial;
-        width: initial;
-        height: initial; }
+        width: 100%;
+        height: auto; }
         .product-card__image .image::before {
           content: '';
           display: block;

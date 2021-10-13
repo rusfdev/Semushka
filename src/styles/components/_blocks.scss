@@ -616,7 +616,7 @@
     }
   }
   &__image {
-    flex: 0 0 170px;
+    flex: 0 0 220px;
     position: relative;
     z-index: 2;
     .image {
@@ -757,8 +757,8 @@
       flex: 0 0 auto;
       .image {
         position: initial;
-        width: initial;
-        height: initial;
+        width: 100%;
+        height: auto;
         &::before {
           content: '';
           display: block;
