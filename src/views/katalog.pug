@@ -63,7 +63,7 @@ block content
                   //category
                   .catalogue-filter__category(data-toggle="parent")  
                     a(href="javascript:void(0);" data-toggle="trigger").catalogue-filter__category-head
-                      span Сухофрукты
+                      span Шоколад и мармелад
                       svg.icon
                         use(xlink:href='./img/icons/sprite.svg#drop-arrow')
                     .catalogue-filter__category-content(data-toggle="content")
@@ -118,18 +118,27 @@ block content
                         +checkbox('Скидка')
                       .catalogue-filter__category-element
                         +checkbox('Хит продаж')
-                
+            
+            //button
+            button.button.button_style-1.catalogue-filter__close-button(data-filter-close)
+              span Применить фильтр
+
 
         .catalogue__content
           .catalogue__head 
             button(aria-label='open-filter').button.button_style-1.catalogue-filter-open
               span Фильтр товаров
 
+            a.button.reset-button.catalogue__head-reset
+              svg.icon
+                use(xlink:href='./img/icons/sprite.svg#filter-reset')
+              span Сбросить фильр
 
             select.select
               option По умолчанию
               option От дешевых к дорогим
               option От дорогих к дешевым
+              
           .catalogue__items
             include blocks/components
             +product-card(1)

@@ -18,56 +18,84 @@ block content
       .contacts-section__container 
         //box
         .contact-box 
-          .contact-box__content 
-            h6.contact-box__title Отдел продаж
-            .contact-box__elements 
-              .contact-box__item
-                span.contact-box__item-head
-                  svg.icon
-                    use(xlink:href='./img/icons/sprite.svg#phone')
-                  | Телефон
-                span.contact-box__item-text 
-                  a(href="tel:74991103044") +7 (499) 110 30 44
-              .contact-box__item
-                span.contact-box__item-head
-                  svg.icon
-                    use(xlink:href='./img/icons/sprite.svg#mail')
-                  | Почта
-                span.contact-box__item-text 
-                  a(href="mailto:opt@semushka-m.ru") opt@semushka-m.ru
-              .contact-box__item
-                span.contact-box__item-head
-                  svg.icon
-                    use(xlink:href='./img/icons/sprite.svg#clock')
-                  | Режим работы
-                span.contact-box__item-text 
-                  | <strong>Пн-Пт:</strong> с 10:00 до 19:00
+          h6.contact-box__title Фирменные магазины
+          .contact-box__elements 
+            .contact-box__item
+              .contact-box__item-head
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#geo')
+                | ул. Мясницкая 13, ст3
+              .contact-box__item-text 
+                table 
+                  tr 
+                    td(style='text-align:right;padding-right:5px;') Пн-Пт: 
+                    td 9:00 - 22:00
+                  tr 
+                    td(style='text-align:right;padding-right:5px;') Сб: 
+                    td 10:00 - 22:00
+                  tr 
+                    td(style='text-align:right;padding-right:5px;') Вс: 
+                    td 10:00 - 21:00
+
+            .contact-box__item
+              .contact-box__item-head
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#geo')
+                | ТЦ «Авиапарк»
+              .contact-box__item-text 
+                table 
+                  tr 
+                    td(style='text-align:right;padding-right:5px;') Пн-Вс:
+                    td 10:00 - 22:00
+
+            .contact-box__item
+              span.contact-box__item-head
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#geo')
+                | ул. Валовая, д6
+              span.contact-box__item-text 
+                table 
+                  tr 
+                    td(style='text-align:right;padding-right:5px;') Пн-Сб:
+                    td 9:00 - 22:00
+                  tr 
+                    td(style='text-align:right;padding-right:5px;') Вс:
+                    td 10:00 - 21:00
+            .contact-box__item
+              span.contact-box__item-head
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#phone')
+                | Телефон
+              span.contact-box__item-text 
+                a(href="tel:+74951595591") +7 (495) 159-55-91
+
         //box
         .contact-box 
-          .contact-box__content 
-            h6.contact-box__title Центральный офис
-            .contact-box__elements 
-              .contact-box__item
-                span.contact-box__item-head
-                  svg.icon
-                    use(xlink:href='./img/icons/sprite.svg#phone')
-                  | Телефон
-                span.contact-box__item-text 
-                  a(href="tel:74954887285") +7 (495) 488 72 85
-              .contact-box__item
-                span.contact-box__item-head
-                  svg.icon
-                    use(xlink:href='./img/icons/sprite.svg#mail')
-                  | Почта
-                span.contact-box__item-text 
-                  a(href="mailto:opt@semushka-m.ru") opt@semushka-m.ru
-              .contact-box__item
-                span.contact-box__item-head
-                  svg.icon
-                    use(xlink:href='./img/icons/sprite.svg#geo')
-                  | Адрес
-                span.contact-box__item-text 
-                  | 127018, Москва, 2-я Ямская улица, дом 9.
+          h6.contact-box__title Центральный офис
+          .contact-box__elements 
+            .contact-box__item
+              span.contact-box__item-head
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#geo')
+                | Адрес
+              span.contact-box__item-text 
+                | 127018, Москва, 2-я Ямская улица, дом 9.
+            .contact-box__item
+              span.contact-box__item-head
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#mail')
+                | Почта
+              span.contact-box__item-text 
+                a(href="mailto:opt@semushka-m.ru") opt@semushka-m.ru
+            .contact-box__item
+              span.contact-box__item-head
+                svg.icon
+                  use(xlink:href='./img/icons/sprite.svg#phone')
+                | Телефон
+              span.contact-box__item-text 
+                a(href="tel:74954887285") +7 (495) 488 72 85
+            
+            
 
   section.section
     .container

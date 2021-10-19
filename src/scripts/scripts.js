@@ -246,9 +246,6 @@ class ItemsSlider {
       slidesPerView: slides_count,
       centerInsufficientSlides: true,
       speed: 500,
-      grid: {
-        rows: 2,
-      },
       pagination: {
         el: this.$pagination,
         clickable: true,
@@ -529,7 +526,7 @@ class Filter {
   }
   init() {
     this.$open = document.querySelector('.catalogue-filter-open');
-    this.$close = document.querySelector('.catalogue-filter-close');
+    this.$close = document.querySelectorAll('.catalogue-filter-close, [data-filter-close]');
 
     this.state = () => {
       return this.$element.classList.contains('is-active');
@@ -555,9 +552,11 @@ class Filter {
     this.$open.addEventListener('click', () => {
       if( !this.state() ) this.open();
     })
-
-    this.$close.addEventListener('click', () => {
-      if( this.state() ) this.close();
+    
+    this.$close.forEach($this => {
+      $this.addEventListener('click', () => {
+        if( this.state() ) this.close();
+      })
     })
 
   }
@@ -683,3 +682,64 @@ const Header = {
     check();
   }
 }
+
+function sort(id) {
+	var url = window.location.href.split("?")[0];
+	var count = 0;
+	var name = "";
+	$(".kombox-checked").find("input").each(function (index) {
+			
+           
+				if (count < 1 ) {
+					url = url + 'filter';
+				}                
+				count = count + 1;
+				if (name != $(this).attr("name")) {
+					url = url + '/';
+					url = url + $(this).attr("name") + '-' + $(this).val();
+				} else {
+					url = url + '-or-';
+					url = url + $(this).val();
+				}				
+				name = $(this).attr("name");
+				
+            
+	});
+	if (count > 0 ) {
+		url = url + '/';
+	}	
+	url = url + id;
+	window.location.href = url;
+}
+
+$(function() {
+    var load_more = false;
+
+    $(document).on("click", "#ajax_next_page", function(e) {
+        e.preventDefault();
+        if(load_more)
+            return false;
+        var ajax_url = $('.pagination__link').last().attr("href");
+		if (ajax_url) {
+			load_more = true;
+			$.ajax({
+				url: ajax_url,
+				type: "POST",
+				data: {IS_AJAX: 'Y'},
+				success: function(data) {
+					$(".pagination").remove();
+					$("#ajax_next_page").after(data);
+					$("#ajax_next_page").remove();
+					if (!$('.pagination__link').last().attr("href")) {
+						$("#ajax_next_page").remove();
+					}
+					load_more = false;
+                    $("body").trigger("load_more");
+				}
+			});
+		} else {
+			$("#ajax_next_page").remove();
+		}
+        
+    });
+});

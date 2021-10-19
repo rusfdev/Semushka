@@ -65,7 +65,58 @@ block content
                         use(xlink:href='./img/icons/sprite.svg#recipe-book')
                       span Тест 2
 
-          
+          #kombox-filter.tag-list.news-section__tag-list
+            form.tag-list__container(name='_form' action='/content/' method='get' data-sef='yes')
+              .catalogue-filter__category-content.kombox-combo.kombox-filter-property-body(data-toggle='content' data-name='tag')
+                #zel.lvl2
+                  a#btn12.tag-element.tag-list__element
+                    .checkbox
+                      input#arrFilter2_263_1216372126.checkbox__input(type='checkbox' value='goryachie_blyuda' name='tag')
+                      label.checkbox__label(for='arrFilter2_263_1216372126')
+                        svg.icon
+                          use(xlink:href='/bitrix/templates/semushka2_roz/img/icons/sprite.svg#bell-covering-hot-dish')
+                        span Горячие блюда
+                #zel.lvl2
+                  a#btn13.tag-element.tag-list__element
+                    .checkbox
+                      input#arrFilter2_263_2716072107.checkbox__input(type='checkbox' value='zakuski' name='tag')
+                      label.checkbox__label(for='arrFilter2_263_2716072107')
+                        svg.icon
+                          use(xlink:href='/bitrix/templates/semushka2_roz/img/icons/sprite.svg#nuggets')
+                        span Закуски
+                #zel.lvl2
+                  a#btn14.tag-element.tag-list__element
+                    .checkbox
+                      input#arrFilter2_263_1407046278.checkbox__input(type='checkbox' value='napitki' name='tag')
+                      label.checkbox__label(for='arrFilter2_263_1407046278')
+                        svg.icon
+                          use(xlink:href='/bitrix/templates/semushka2_roz/img/icons/sprite.svg#soda')
+                        span Напитки
+                #zel.lvl2
+                  a#btn15.tag-element.tag-list__element
+                    .checkbox
+                      input#arrFilter2_263_3605317693.checkbox__input(type='checkbox' value='salaty' name='tag')
+                      label.checkbox__label(for='arrFilter2_263_3605317693')
+                        svg.icon
+                          use(xlink:href='/bitrix/templates/semushka2_roz/img/icons/sprite.svg#salad')
+                        span Салаты
+                #zel.lvl2
+                  a#btn16.tag-element.tag-list__element
+                    .checkbox
+                      input#arrFilter2_263_954902801.checkbox__input(type='checkbox' value='sladkoe' name='tag')
+                      label.checkbox__label(for='arrFilter2_263_954902801')
+                        svg.icon
+                          use(xlink:href='/bitrix/templates/semushka2_roz/img/icons/sprite.svg#cupcake')
+                        span Сладкое
+              #modef.modef(style='display:none')
+                .modef-wrap
+                  | Выбрано: 
+                  span#modef_num 24
+                  a(href='/content/') Показать
+                  span.ecke
+            .kombox-loading
+
+
           .blog-grid 
             +recipe-block(1)
             +recipe-block(2)
