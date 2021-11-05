@@ -25,12 +25,19 @@ block content
               .container
 
                 .catalogue-filter__box
+                  
                   //category
-                  .catalogue-filter__category.is-active(data-toggle="parent")   
-                    a(href="javascript:void(0);" data-toggle="trigger").catalogue-filter__category-head.is-active
-                      span Орехи
-                      svg.icon
-                        use(xlink:href='./img/icons/sprite.svg#drop-arrow')
+                  .catalogue-filter__category.is-active(data-toggle="parent") 
+
+                    .catalogue-filter__category-head
+                      a(href="#").catalogue-filter__category-title
+                        span Орехи
+
+                      button(data-toggle="trigger").catalogue-filter__category-toggle.is-active
+                        svg.icon
+                          use(xlink:href='./img/icons/sprite.svg#drop-arrow')
+                    
+                    
                     .catalogue-filter__category-content.is-active(data-toggle="content")
                       .catalogue-filter__category-element
                         +checkbox('Арахис')
@@ -60,12 +67,18 @@ block content
                         +checkbox('Фундук')
                       .catalogue-filter__category-element
                         +checkbox('Ядро абрикосовой косточки')
+                  
+                  
                   //category
                   .catalogue-filter__category(data-toggle="parent")  
-                    a(href="javascript:void(0);" data-toggle="trigger").catalogue-filter__category-head
-                      span Шоколад и мармелад
-                      svg.icon
-                        use(xlink:href='./img/icons/sprite.svg#drop-arrow')
+                    .catalogue-filter__category-head
+                      a(href="#").catalogue-filter__category-title
+                        span Шоколад и мармелад
+
+                      button(data-toggle="trigger").catalogue-filter__category-toggle
+                        svg.icon
+                          use(xlink:href='./img/icons/sprite.svg#drop-arrow')
+
                     .catalogue-filter__category-content(data-toggle="content")
                       .catalogue-filter__category-element
                         +checkbox('Арахис')
@@ -77,35 +90,15 @@ block content
                         +checkbox('Кедровый орех')
 
                   .catalogue-filter__category 
-                    a(href="#").catalogue-filter__category-head
-                      span Смеси
-                  .catalogue-filter__category 
-                    a(href="#").catalogue-filter__category-head
-                      span Семечки
-
-                  //category
-                  .catalogue-filter__category(data-toggle="parent")  
-                    a(href="javascript:void(0);" data-toggle="trigger").catalogue-filter__category-head
-                      span Сладости
-                      svg.icon
-                        use(xlink:href='./img/icons/sprite.svg#drop-arrow')
-                    .catalogue-filter__category-content(data-toggle="content")
-                      .catalogue-filter__category-element
-                        +checkbox('Арахис')
-                      .catalogue-filter__category-element
-                        +checkbox('Бразильский орех')
-                      .catalogue-filter__category-element
-                        +checkbox('Грецкий орех')
-                      .catalogue-filter__category-element
-                        +checkbox('Кедровый орех')
-                  .catalogue-filter__category 
-                    a(href="#").catalogue-filter__category-head
-                      span Наборы
+                    .catalogue-filter__category-head
+                      a(href="#").catalogue-filter__category-title
+                        span Шоколад и мармелад
 
                 .catalogue-filter__box
                   .catalogue-filter__category 
                     .catalogue-filter__category-head
-                      span Статус товара
+                      .catalogue-filter__category-title
+                        span Статус товара
 
                     .catalogue-filter__category-content
                       .catalogue-filter__category-element

@@ -126,7 +126,7 @@
       margin-left: 10px;
     }
     &__large-button {
-      line-height: 50px;
+      display: none;
     }
     &__container {
       height: 50px;
@@ -136,11 +136,6 @@
     }
     &__logo {
       width: 90px;
-    }
-  }
-  @include media-breakpoint-down(md) {
-    &__large-button {
-      display: none;
     }
   }
   @include media-breakpoint-down(sm) {
@@ -264,6 +259,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  &__top {
+    flex-shrink: 0;
   }
   &__bottom {
     margin-top: 40px;

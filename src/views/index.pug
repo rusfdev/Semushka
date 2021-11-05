@@ -127,6 +127,32 @@ block content
         +certificate('./img/certificates/4.jpg')
         +certificate('./img/certificates/5.jpg')
 
+  section.section.items-slider
+    .container 
+      .section__head.items-slider__head 
+        h3.section__title Наши сертификаты
+      .swiper
+        .swiper-button.swiper-button-prev(data-custom-interaction)
+          svg.icon
+            use(xlink:href='./img/icons/sprite.svg#right-arrow')
+        .swiper-button.swiper-button-next(data-custom-interaction)
+          svg.icon
+            use(xlink:href='./img/icons/sprite.svg#right-arrow')
+        .swiper-container(data-slides='2' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
+          .swiper-wrapper
+            .swiper-slide
+              +certificate('./img/certificates/1.jpg')
+            .swiper-slide
+              +certificate('./img/certificates/2.jpg')
+            .swiper-slide
+              +certificate('./img/certificates/3.jpg')
+            .swiper-slide
+              +certificate('./img/certificates/4.jpg')
+            .swiper-slide
+              +certificate('./img/certificates/5.jpg')
+        .swiper-pagination    
+
+
   section.section
     .container 
       .section__head.section__head_with-button
