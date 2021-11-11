@@ -1409,7 +1409,12 @@
     &.is-active {
       font-weight: 700;
       color: var(--color-accent-1);
-      cursor: default;
+      .icon {
+        transform: translateY(-50%) rotate(0);
+      }
+      &:not([data-toggle]) {
+        cursor: default;
+      }
     }
   }
   &__category {
@@ -1435,6 +1440,15 @@
         &[data-touch], &[data-hover] {
           color: var(--color-accent-1);
         }
+      }
+    }
+    a {
+      display: block;
+      &[data-touch], &[data-hover] {
+        color: var(--color-accent-1);
+      }
+      &.is-active {
+        color: var(--color-accent-1);
       }
     }
   }
