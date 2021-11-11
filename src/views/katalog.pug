@@ -23,21 +23,6 @@ block content
                 button(aria-label='filter close').close-button.catalogue-filter-close
             .catalogue-filter__container(data-scroll-lock-scrollable)
               .container
-
-                .catalogue-filter__box
-                  .catalogue-filter__category 
-                    .catalogue-filter__category-head
-                      span Статус товара
-
-                    .catalogue-filter__category-content
-                      .catalogue-filter__category-element
-                        +checkbox('Акция')
-                      .catalogue-filter__category-element
-                        +checkbox('В наличии')
-                      .catalogue-filter__category-element
-                        +checkbox('Новинка')
-                      
-
                 .catalogue-filter__box(data-toggle="group")
                   //category
                   .catalogue-filter__category(data-toggle="parent")
@@ -98,22 +83,21 @@ block content
             //button
             //button.button.button_style-1.catalogue-filter__close-button(data-filter-close)
               span Применить фильтр
-
-
+       
         .catalogue__content
           .catalogue__head 
             button(aria-label='open-filter').button.button_style-1.catalogue-filter-open
               span Фильтр товаров
-
-            a.button.reset-button.catalogue__head-reset
-              svg.icon
-                use(xlink:href='./img/icons/sprite.svg#filter-reset')
-              span Сбросить фильр
-
+            
             select.select
               option По умолчанию
               option От дешевых к дорогим
               option От дорогих к дешевым
+
+            .catalogue__status 
+              +checkbox('Aкция')
+              +checkbox('В наличии')
+              +checkbox('Новинка')
               
           .catalogue__items
             include blocks/components
