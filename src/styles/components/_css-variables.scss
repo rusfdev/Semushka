@@ -1,4 +1,8 @@
 :root {
+  --header-height: 65px;
+
+
+  
   @include media-breakpoint-up(sm) {
     --grid-gutter-x: 24px;
     --container-gutter-x: 24px;
@@ -12,6 +16,7 @@
   }
   @include media-breakpoint-down(lg) {
     --content-width: #{map-get($container-max-widths, md)};
+    --header-height: 50px;
   }
   @include media-breakpoint-down(md) {
     --content-width: #{map-get($container-max-widths, sm)};
@@ -24,6 +29,6 @@
   }
   
   --content-gutter: ((100vw - var(--content-width) + var(--container-gutter-x) * 2) / 2);
-
+  
   --block-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.05);
 }

@@ -276,10 +276,10 @@
 }
 
 .home-screen-banner {
-  margin-bottom: 100px;
+  padding-bottom: 100px;
   --pv: 90px;
   &:first-child {
-    margin-top: 0;
+    padding-top: 0;
   }
   &__slide {
     &-container {
@@ -919,15 +919,15 @@
     top: -30px;
     left: -460px;
   }
-  &__background {
-    background-color: transparent;
-    position: absolute;
-    width: 110%;
-    height: calc(100% + 150px);
-    top: -70px;
-    left: 0;
-  }
   @include media-breakpoint-up(lg) {
+    &__background {
+      background-color: transparent;
+      position: absolute;
+      width: 110%;
+      height: calc(100% + var(--oversize));
+      top: calc(var(--oversize) / -2);
+      left: 0;
+    }
     .swiper-container {
       overflow: visible;
     }
@@ -1336,6 +1336,14 @@
 
   
   @include media-breakpoint-up(lg) {
+    overflow: visible;
+    &__wrapper {
+      align-items: flex-start;
+    }
+    &__aside {
+      position: sticky;
+      top: calc(var(--header-height) + 30px);
+    }
     &__head-reset {
       display: none;
     }
@@ -1386,13 +1394,13 @@
     user-select: none;
     transition: color $trs1;
     .icon {
+      --size: 14px;
       position: absolute;
-      width: 44px;
-      height: 44px;
-      right: 0;
-      top: 0;
-      padding: 15px;
-      transform: rotate(-90deg);
+      width: var(--size);
+      height: var(--size);
+      right: var(--gx);
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
       color: var(--color-accent-1);
     }
     &[data-touch], &[data-hover] {
@@ -1401,9 +1409,7 @@
     &.is-active {
       font-weight: 700;
       color: var(--color-accent-1);
-      .icon {
-        transform: rotate(0);
-      }
+      cursor: default;
     }
   }
   &__category {
@@ -2045,7 +2051,7 @@
 .map-section {
   --px: 26px;
   &:last-child {
-    margin: 0;
+    padding: 0;
   }
   &__container {
     position: relative;
