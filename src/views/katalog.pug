@@ -24,6 +24,19 @@ block content
             .catalogue-filter__container(data-scroll-lock-scrollable)
               .container
 
+                .catalogue-filter__box
+                  .catalogue-filter__category 
+                    .catalogue-filter__category-head
+                      span Статус товара
+
+                    .catalogue-filter__category-content
+                      .catalogue-filter__category-element
+                        +checkbox('В наличии')
+                      .catalogue-filter__category-element
+                        +checkbox('Новинка')
+                      .catalogue-filter__category-element
+                        +checkbox('Акция')
+
                 .catalogue-filter__box(data-toggle="group")
                   //category
                   .catalogue-filter__category(data-toggle="parent")
@@ -79,24 +92,7 @@ block content
                     a(href="javascript:void(0);").catalogue-filter__category-head
                       span Наборы
 
-                .catalogue-filter__box
-                  .catalogue-filter__category 
-                    .catalogue-filter__category-head
-                      span Статус товара
-
-                    .catalogue-filter__category-content
-                      .catalogue-filter__category-element
-                        +checkbox('В наличии')
-                      .catalogue-filter__category-element
-                        +checkbox('Новинка')
-                      .catalogue-filter__category-element
-                        +checkbox('Акция')
-                      .catalogue-filter__category-element
-                        +checkbox('Скидка')
-                      .catalogue-filter__category-element
-                        +checkbox('Хит продаж')
-            
-
+                
 
             //button
             //button.button.button_style-1.catalogue-filter__close-button(data-filter-close)
