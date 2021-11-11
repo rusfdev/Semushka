@@ -1340,10 +1340,10 @@
     &__wrapper {
       align-items: flex-start;
     }
-    &__aside {
+    /* &__aside {
       position: sticky;
       top: calc(var(--header-height) + 30px);
-    }
+    } */
     &__head-reset {
       display: none;
     }

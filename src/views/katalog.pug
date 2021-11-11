@@ -24,7 +24,7 @@ block content
             .catalogue-filter__container(data-scroll-lock-scrollable)
               .container
 
-                .catalogue-filter__box
+                .catalogue-filter__box(data-toggle="group")
                   //category
                   .catalogue-filter__category(data-toggle="parent")
                     a(href="javascript:void(0);" data-toggle="trigger").catalogue-filter__category-head
@@ -37,12 +37,27 @@ block content
                         a(href="#") Дочерняя ссылка 1 
                       .catalogue-filter__category-element
                         a(href="#") Дочерняя ссылка 2
+                      .catalogue-filter__category-element 
+                        a(href="#") Дочерняя ссылка 3
+                      .catalogue-filter__category-element
+                        a(href="#") Дочерняя ссылка 4
 
-                  
                   //category
-                  .catalogue-filter__category
-                    a(href="javascript:void(0);").catalogue-filter__category-head
+                  .catalogue-filter__category(data-toggle="parent")
+                    a(href="javascript:void(0);" data-toggle="trigger").catalogue-filter__category-head
                       span Шоколад и мармелад
+                      svg.icon
+                        use(xlink:href='./img/icons/sprite.svg#drop-arrow')
+                    .catalogue-filter__category-content(data-toggle="content")
+
+                      .catalogue-filter__category-element 
+                        a(href="#") Дочерняя ссылка 1 
+                      .catalogue-filter__category-element
+                        a(href="#") Дочерняя ссылка 2
+                      .catalogue-filter__category-element 
+                        a(href="#") Дочерняя ссылка 3
+                      .catalogue-filter__category-element
+                        a(href="#") Дочерняя ссылка 4
 
                   //category    
                   .catalogue-filter__category 
@@ -81,8 +96,10 @@ block content
                       .catalogue-filter__category-element
                         +checkbox('Хит продаж')
             
+
+
             //button
-            button.button.button_style-1.catalogue-filter__close-button(data-filter-close)
+            //button.button.button_style-1.catalogue-filter__close-button(data-filter-close)
               span Применить фильтр
 
 

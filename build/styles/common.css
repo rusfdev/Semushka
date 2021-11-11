@@ -2484,12 +2484,13 @@ ol:not([class]) {
 
 @media (min-width: 1024px) {
   .catalogue {
-    overflow: visible; }
+    overflow: visible;
+    /* &__aside {
+      position: sticky;
+      top: calc(var(--header-height) + 30px);
+    } */ }
     .catalogue__wrapper {
       align-items: flex-start; }
-    .catalogue__aside {
-      position: sticky;
-      top: calc(var(--header-height) + 30px); }
     .catalogue__head-reset {
       display: none; } }
 
