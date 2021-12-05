@@ -321,6 +321,27 @@ class ToggleElement {
     for(let $el of [this.$parent, this.$trigger, this.$block]) {
       $el.classList.add('is-active')
     }
+
+    //if group
+    let $group = this.$parent.closest('[data-toggle="group"]');
+    if ($group) {
+      let $childrens = $group.querySelectorAll('[data-toggle="parent"]');
+
+      for (let $parent of $childrens) {
+        if ($parent !== this.$parent) {
+          let $trigger = $parent.querySelector('[data-toggle="trigger"]');
+          let $block = $parent.querySelector('[data-toggle="content"]');
+
+          for(let $el of [$parent, $trigger, $block]) {
+            $el.classList.remove('is-active');
+          }
+
+          break;
+        }
+      }
+
+
+    }
   }
 
   close() {
